@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-twitter-clone';
+
+  fontSizeLevel : string = '0';
 }
