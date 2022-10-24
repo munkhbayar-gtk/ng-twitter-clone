@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
 
-/* Theming and Typography related codes here*/
+/*
+  Theming and Typography related codes here
+
+  1. create themes, Light, Dim, Dark
+  2. create Theme chooser
+  3. create foreground color chooser
+  4. create font-size chooser (font-size, font-weight, line-spacing)
+
+
+*/
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
