@@ -1,16 +1,11 @@
 
-Dynamic Theming
-https://webfactory.mk/an-approach-to-dynamic-theme-color-generation-in-angular/
-https://github.com/Peshou/dynamic-theming-demo/tree/master/src/app
+<div class="default-theme-3">
+  Dynamic Theming
+  https://webfactory.mk/an-approach-to-dynamic-theme-color-generation-in-angular/
+  https://github.com/Peshou/dynamic-theming-demo/tree/master/src/app
 
-<div [class]="'font-size-'+fontSizeLevel">
-  <select [(ngModel)]="fontSizeLevel">
-    <option *ngFor="let vl of [0, 1 , 2, 3, 4]" [value]="vl">{{vl}}</option>
-  </select>
   <H1>H1 text here</H1>
   <H2>H2 text here</H2>
   <p>Simple Text Here</p>
+  <button mat-raised-button color="primary">Click me</button>
 </div>
-
-
-
