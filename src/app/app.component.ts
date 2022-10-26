@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScreenMonitorService } from './services/screen-monitor.service';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,9 @@ export class AppComponent {
   get currentThemeName() : string {
     const items = this.currentTheme.split('-');
     return items[1];
+  }
+
+  constructor(public sz : ScreenMonitorService) {
+    //sz.setup();
   }
 }

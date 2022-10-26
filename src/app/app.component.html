@@ -1,22 +1,11 @@
-
-<div [ngClass]="[currentThemeName, currentTheme].join(' ')" class="mat-app-background">
-  Dynamic Theming
-  https://webfactory.mk/an-approach-to-dynamic-theme-color-generation-in-angular/
-  https://github.com/Peshou/dynamic-theming-demo/tree/master/src/app
-
-  <h1>H1 text here</h1>
-  <h2>H2 text here</h2>
-  <h3>H2 text here</h3>
-  <p>Simple Text Here</p>
-  ----------------------------------<br>
-  <h1 class="mat-h1">spanned H1 text here</h1><br>
-  <span class="mat-h2">spanned H2 text here</span><br>
-  <span class="mat-subheading-2">spanned H3 text here</span><br>
-  <p class="mat-body">Simple Text Here</p>
-
-  <span class="mat-small sub-text">Sub text</span><br>
-  <span class="mat-body sub-text">@MjText</span><br>
-  <button mat-raised-button color="primary">Click me</button>
-
-  <input [(ngModel)]="currentTheme"/>
+<div id="app-container" [ngClass]="[currentThemeName, currentTheme].join(' ')" class="mat-app-background">
+  <header role="banner">
+    Left navbar bad ass
+    '{{sz.activeQuery | json}}'<br>
+    '{{sz.on}}'
+    <span classNames="hidden sm:inline sm:text">Small text</span>
+  </header>
+  <main role="main">
+    main
+  </main>
 </div>

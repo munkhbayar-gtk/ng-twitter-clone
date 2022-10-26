@@ -29,5 +29,15 @@ mat.$theme-ignore-duplication-warnings: true;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.hidden {
+  display: none;
+}
+.inline{
+  display: inline;
+}
+.flex {
+  display: flex;
+}
+
 
 
