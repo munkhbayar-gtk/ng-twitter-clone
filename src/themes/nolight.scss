@@ -4,113 +4,55 @@
 @import 'colors.scss';
 @import 'typographics.scss';
 
+@function merge($color, $typo) {
+  $ret : mat.define-dark-theme((
+    color: $color, typography: $typo
+  ));
+  //background-color: rgb(0, 0, 0)
+  //color: rgb(231, 233, 234);
+  @return $ret; //modifyColors($ret, 'rgb(231, 233, 234)', 'rgb(0, 0, 0)');
+}
+
+/*
 $thm-nolight-blue-0 : mat.define-dark-theme((
   color: $blue-color, typography: $typo-0
 ));
-$thm-nolight-blue-1 : mat.define-dark-theme((
-  color: $blue-color, typography: $typo-1
-));
-$thm-nolight-blue-2 : mat.define-dark-theme((
-  color: $blue-color, typography: $typo-2
-));
-$thm-nolight-blue-3 : mat.define-dark-theme((
-  color: $blue-color, typography: $typo-3
-));
+*/
+$thm-nolight-blue-0 : merge($blue-color, $typo-0);
+$thm-nolight-blue-1 : merge($blue-color, $typo-1);
+$thm-nolight-blue-2 : merge($blue-color, $typo-2);
+$thm-nolight-blue-3 : merge($blue-color, $typo-3);
+$thm-nolight-blue-4 : merge($blue-color, $typo-4);
 
-$thm-nolight-blue-4 : mat.define-dark-theme((
-  color: $blue-color, typography: $typo-4
-));
+$thm-nolight-yellow-0 : merge($yellow-color, $typo-0);
+$thm-nolight-yellow-1 : merge($yellow-color, $typo-1);
+$thm-nolight-yellow-2 : merge($yellow-color, $typo-2);
+$thm-nolight-yellow-3 : merge($yellow-color, $typo-3);
+$thm-nolight-yellow-4 : merge($yellow-color, $typo-4);
 
-$thm-nolight-yellow-0 : mat.define-dark-theme((
-  color: $yellow-color, typography: $typo-0
-));
+$thm-nolight-pink-0 : merge($pink-color, $typo-0);
+$thm-nolight-pink-1 : merge($pink-color, $typo-1);
+$thm-nolight-pink-2 : merge($pink-color, $typo-2);
+$thm-nolight-pink-3 : merge($pink-color, $typo-3);
+$thm-nolight-pink-4 : merge($pink-color, $typo-4);
 
-$thm-nolight-yellow-1 : mat.define-dark-theme((
-  color: $yellow-color, typography: $typo-1
-));
+$thm-nolight-deep-purple-0 : merge($deep-purple-color, $typo-0);
+$thm-nolight-deep-purple-1 : merge($deep-purple-color, $typo-1);
+$thm-nolight-deep-purple-2 : merge($deep-purple-color, $typo-2);
+$thm-nolight-deep-purple-3 : merge($deep-purple-color, $typo-3);
+$thm-nolight-deep-purple-4 : merge($deep-purple-color, $typo-4);
 
-$thm-nolight-yellow-2 : mat.define-dark-theme((
-  color: $yellow-color, typography: $typo-2
-));
-$thm-nolight-yellow-3 : mat.define-dark-theme((
-  color: $yellow-color, typography: $typo-3
-));
-$thm-nolight-yellow-4 : mat.define-dark-theme((
-  color: $yellow-color, typography: $typo-4
-));
+$thm-nolight-deep-orange-0 : merge($deep-orange-color, $typo-0);
+$thm-nolight-deep-orange-1 : merge($deep-orange-color, $typo-1);
+$thm-nolight-deep-orange-2 : merge($deep-orange-color, $typo-2);
+$thm-nolight-deep-orange-3 : merge($deep-orange-color, $typo-3);
+$thm-nolight-deep-orange-4 : merge($deep-orange-color, $typo-4);
 
-$thm-nolight-pink-0 : mat.define-dark-theme((
-  color: $pink-color, typography: $typo-0
-));
-
-$thm-nolight-pink-1 : mat.define-dark-theme((
-  color: $pink-color, typography: $typo-1
-));
-
-$thm-nolight-pink-2 : mat.define-dark-theme((
-  color: $pink-color, typography: $typo-2
-));
-$thm-nolight-pink-3 : mat.define-dark-theme((
-  color: $pink-color, typography: $typo-3
-));
-$thm-nolight-pink-4 : mat.define-dark-theme((
-  color: $pink-color, typography: $typo-4
-));
-
-$thm-nolight-deep-purple-0 : mat.define-dark-theme((
-  color: $deep-purple-color, typography: $typo-0
-));
-
-$thm-nolight-deep-purple-1 : mat.define-dark-theme((
-  color: $deep-purple-color, typography: $typo-1
-));
-
-$thm-nolight-deep-purple-2 : mat.define-dark-theme((
-  color: $deep-purple-color, typography: $typo-2
-));
-$thm-nolight-deep-purple-3 : mat.define-dark-theme((
-  color: $deep-purple-color, typography: $typo-3
-));
-$thm-nolight-deep-purple-4 : mat.define-dark-theme((
-  color: $deep-purple-color, typography: $typo-4
-));
-
-$thm-nolight-deep-orange-0 : mat.define-dark-theme((
-  color: $deep-orange-color, typography: $typo-0
-));
-
-$thm-nolight-deep-orange-1 : mat.define-dark-theme((
-  color: $deep-orange-color, typography: $typo-1
-));
-
-$thm-nolight-deep-orange-2 : mat.define-dark-theme((
-  color: $deep-orange-color, typography: $typo-2
-));
-$thm-nolight-deep-orange-3 : mat.define-dark-theme((
-  color: $deep-orange-color, typography: $typo-3
-));
-$thm-nolight-deep-orange-4 : mat.define-dark-theme((
-  color: $deep-orange-color, typography: $typo-4
-));
-
-$thm-nolight-teal-0 : mat.define-dark-theme((
-  color: $teal-color, typography: $typo-0
-));
-
-$thm-nolight-teal-1 : mat.define-dark-theme((
-  color: $teal-color, typography: $typo-1
-));
-
-$thm-nolight-teal-2 : mat.define-dark-theme((
-  color: $teal-color, typography: $typo-2
-));
-$thm-nolight-teal-3 : mat.define-dark-theme((
-  color: $teal-color, typography: $typo-3
-));
-$thm-nolight-teal-4 : mat.define-dark-theme((
-  color: $teal-color, typography: $typo-4
-));
-
+$thm-nolight-teal-0 : merge($teal-color, $typo-0);
+$thm-nolight-teal-1 : merge($teal-color, $typo-1);
+$thm-nolight-teal-2 : merge($teal-color, $typo-2);
+$thm-nolight-teal-3 : merge($teal-color, $typo-3);
+$thm-nolight-teal-4 : merge($teal-color, $typo-4);
 
 .thm-nolight-blue-0 {
   @include mat.core($typo-0);
@@ -241,10 +183,10 @@ $thm-nolight-teal-4 : mat.define-dark-theme((
 }
 
 .nolight{
-  background-color: rgb(0, 0, 0) !important;
+  //background-color: rgb(0, 0, 0) !important;
   scrollbar-color: rgb(62, 65, 68) rgb(22, 24, 28) !important;
   --sub-color: rgb(113, 118, 123);
-  color: rgb(231, 233, 234);
+  //color: rgb(231, 233, 234);
   //color: red !important;
   .sub-text {
     color: rgb(113, 118, 123);

@@ -4,113 +4,50 @@
 @import 'colors.scss';
 @import 'typographics.scss';
 
-$thm-default-blue-0 : mat.define-light-theme((
-  color: $blue-color, typography: $typo-0
-));
-$thm-default-blue-1 : mat.define-light-theme((
-  color: $blue-color, typography: $typo-1
-));
-$thm-default-blue-2 : mat.define-light-theme((
-  color: $blue-color, typography: $typo-2
-));
-$thm-default-blue-3 : mat.define-light-theme((
-  color: $blue-color, typography: $typo-3
-));
+@function merge($color, $typo) {
+  $ret : mat.define-light-theme((
+    color: $color, typography: $typo
+  ));
+  //background-color: rgb(0, 0, 0)
+  //color: rgb(231, 233, 234);
+  @return $ret; //modifyColors($ret, 'rgb(231, 233, 234)', 'rgb(0, 0, 0)');
+}
 
-$thm-default-blue-4 : mat.define-light-theme((
-  color: $blue-color, typography: $typo-4
-));
+$thm-default-blue-0 : merge($blue-color, $typo-0);
+$thm-default-blue-1 : merge($blue-color, $typo-1);
+$thm-default-blue-2 : merge($blue-color, $typo-2);
+$thm-default-blue-3 : merge($blue-color, $typo-3);
+$thm-default-blue-4 : merge($blue-color, $typo-4);
 
-$thm-default-yellow-0 : mat.define-light-theme((
-  color: $yellow-color, typography: $typo-0
-));
+$thm-default-yellow-0 : merge($yellow-color, $typo-0);
+$thm-default-yellow-1 : merge($yellow-color, $typo-1);
+$thm-default-yellow-2 : merge($yellow-color, $typo-2);
+$thm-default-yellow-3 : merge($yellow-color, $typo-3);
+$thm-default-yellow-4 : merge($yellow-color, $typo-4);
 
-$thm-default-yellow-1 : mat.define-light-theme((
-  color: $yellow-color, typography: $typo-1
-));
+$thm-default-pink-0 : merge($pink-color, $typo-0);
+$thm-default-pink-1 : merge($pink-color, $typo-1);
+$thm-default-pink-2 : merge($pink-color, $typo-2);
+$thm-default-pink-3 : merge($pink-color, $typo-3);
+$thm-default-pink-4 : merge($pink-color, $typo-4);
 
-$thm-default-yellow-2 : mat.define-light-theme((
-  color: $yellow-color, typography: $typo-2
-));
-$thm-default-yellow-3 : mat.define-light-theme((
-  color: $yellow-color, typography: $typo-3
-));
-$thm-default-yellow-4 : mat.define-light-theme((
-  color: $yellow-color, typography: $typo-4
-));
+$thm-default-deep-purple-0 : merge($deep-purple-color, $typo-0);
+$thm-default-deep-purple-1 : merge($deep-purple-color, $typo-1);
+$thm-default-deep-purple-2 : merge($deep-purple-color, $typo-2);
+$thm-default-deep-purple-3 : merge($deep-purple-color, $typo-3);
+$thm-default-deep-purple-4 : merge($deep-purple-color, $typo-4);
 
-$thm-default-pink-0 : mat.define-light-theme((
-  color: $pink-color, typography: $typo-0
-));
+$thm-default-deep-orange-0 : merge($deep-orange-color, $typo-0);
+$thm-default-deep-orange-1 : merge($deep-orange-color, $typo-1);
+$thm-default-deep-orange-2 : merge($deep-orange-color, $typo-2);
+$thm-default-deep-orange-3 : merge($deep-orange-color, $typo-3);
+$thm-default-deep-orange-4 : merge($deep-orange-color, $typo-4);
 
-$thm-default-pink-1 : mat.define-light-theme((
-  color: $pink-color, typography: $typo-1
-));
-
-$thm-default-pink-2 : mat.define-light-theme((
-  color: $pink-color, typography: $typo-2
-));
-$thm-default-pink-3 : mat.define-light-theme((
-  color: $pink-color, typography: $typo-3
-));
-$thm-default-pink-4 : mat.define-light-theme((
-  color: $pink-color, typography: $typo-4
-));
-
-$thm-default-deep-purple-0 : mat.define-light-theme((
-  color: $deep-purple-color, typography: $typo-0
-));
-
-$thm-default-deep-purple-1 : mat.define-light-theme((
-  color: $deep-purple-color, typography: $typo-1
-));
-
-$thm-default-deep-purple-2 : mat.define-light-theme((
-  color: $deep-purple-color, typography: $typo-2
-));
-$thm-default-deep-purple-3 : mat.define-light-theme((
-  color: $deep-purple-color, typography: $typo-3
-));
-$thm-default-deep-purple-4 : mat.define-light-theme((
-  color: $deep-purple-color, typography: $typo-4
-));
-
-$thm-default-deep-orange-0 : mat.define-light-theme((
-  color: $deep-orange-color, typography: $typo-0
-));
-
-$thm-default-deep-orange-1 : mat.define-light-theme((
-  color: $deep-orange-color, typography: $typo-1
-));
-
-$thm-default-deep-orange-2 : mat.define-light-theme((
-  color: $deep-orange-color, typography: $typo-2
-));
-$thm-default-deep-orange-3 : mat.define-light-theme((
-  color: $deep-orange-color, typography: $typo-3
-));
-$thm-default-deep-orange-4 : mat.define-light-theme((
-  color: $deep-orange-color, typography: $typo-4
-));
-
-$thm-default-teal-0 : mat.define-light-theme((
-  color: $teal-color, typography: $typo-0
-));
-
-$thm-default-teal-1 : mat.define-light-theme((
-  color: $teal-color, typography: $typo-1
-));
-
-$thm-default-teal-2 : mat.define-light-theme((
-  color: $teal-color, typography: $typo-2
-));
-$thm-default-teal-3 : mat.define-light-theme((
-  color: $teal-color, typography: $typo-3
-));
-$thm-default-teal-4 : mat.define-light-theme((
-  color: $teal-color, typography: $typo-4
-));
-
+$thm-default-teal-0 : merge($teal-color, $typo-0);
+$thm-default-teal-1 : merge($teal-color, $typo-1);
+$thm-default-teal-2 : merge($teal-color, $typo-2);
+$thm-default-teal-3 : merge($teal-color, $typo-3);
+$thm-default-teal-4 : merge($teal-color, $typo-4);
 
 .thm-default-blue-0 {
   @include mat.core($typo-0);

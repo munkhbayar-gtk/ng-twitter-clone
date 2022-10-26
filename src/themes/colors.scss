@@ -32,3 +32,31 @@ $teal-accent : mat.define-palette(mat.$teal-palette);
 $teal-warn: mat.define-palette(mat.$teal-palette);
 $teal-color: (primary: $teal-primary, accent: $teal-accent, warn: $teal-warn);
 
+
+/* setting background, foreground colors to the themes*/
+//https://eatmorecarrots.medium.com/changing-the-background-color-in-an-angular-material-theme-90d29f864759
+@function modifyColor($theme, $dest, $color) {
+// Replace the background in the color object's background palette.
+  $theme-color: map-get($theme, color);
+  $color-palette: map-get($theme-color, $dest);
+  $color-palette: map-merge($color-palette, ($dest: $color));
+  ////$color-background-palette: map-merge($color-background-palette, (raised-button: $background-color));
+
+  // Replace the background in the background palette.
+  $dest-palette: map-get($theme, $dest);
+  $dest-palette: map-merge($dest-palette, ($dest: $color));
+  ////$background-palette: map-merge($background-palette, (raised-button: $background-color));
+
+  // Merge the changes into a new theme.
+  $modified-theme-color: map-merge($theme-color, ($dest: $color-palette));
+  $modified-theme: map-merge($theme, (color: $modified-theme-color));
+  $modified-theme: map-merge($modified-theme, ($dest: $color-palette));
+  @return $modified-theme;
+}
+@function modifyColors($theme, $fg, $bg){
+
+  $modifiedTheme : modifyColor($theme, background);
+  $modifiedTheme : modifyColor($modifiedTheme, foreground);
+
+  @return $modifiedTheme;
+}
