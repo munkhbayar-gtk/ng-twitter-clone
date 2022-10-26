@@ -1,15 +1,113 @@
 @use '@angular/material' as mat;
-@include mat.core();
-$default-primary-3 : mat.define-palette(mat.$amber-palette);
-$default-accent-3 : mat.define-palette(mat.$amber-palette);
+//@include mat.core();
 
-$default-theme-3 : mat.define-light-theme((
-  color: (
-    primary: $default-primary-3,
-    accent: $default-accent-3
-  )
+@import 'colors.scss';
+@import 'typographics.scss';
+
+$thm-dim-blue-0 : mat.define-light-theme((
+  color: $blue-color
 ));
 
-.default-theme-3 {
-  @include mat.all-component-themes($default-theme-3);
-}
+$thm-dim-blue-1 : mat.define-light-theme((
+  color: $blue-color
+));
+
+$thm-dim-blue-2 : mat.define-light-theme((
+  color: $blue-color
+));
+$thm-dim-blue-3 : mat.define-light-theme((
+  color: $blue-color
+));
+$thm-dim-blue-4 : mat.define-light-theme((
+  color: $blue-color
+));
+
+$thm-dim-yellow-0 : mat.define-light-theme((
+  color: $yellow-color
+));
+
+$thm-dim-yellow-1 : mat.define-light-theme((
+  color: $yellow-color
+));
+
+$thm-dim-yellow-2 : mat.define-light-theme((
+  color: $yellow-color
+));
+$thm-dim-yellow-3 : mat.define-light-theme((
+  color: $yellow-color
+));
+$thm-dim-yellow-4 : mat.define-light-theme((
+  color: $yellow-color
+));
+
+$thm-dim-pink-0 : mat.define-light-theme((
+  color: $pink-color
+));
+
+$thm-dim-pink-1 : mat.define-light-theme((
+  color: $pink-color
+));
+
+$thm-dim-pink-2 : mat.define-light-theme((
+  color: $pink-color
+));
+$thm-dim-pink-3 : mat.define-light-theme((
+  color: $pink-color
+));
+$thm-dim-pink-4 : mat.define-light-theme((
+  color: $pink-color
+));
+
+$thm-dim-deep-purple-0 : mat.define-light-theme((
+  color: $deep-purple-color
+));
+
+$thm-dim-deep-purple-1 : mat.define-light-theme((
+  color: $deep-purple-color
+));
+
+$thm-dim-deep-purple-2 : mat.define-light-theme((
+  color: $deep-purple-color
+));
+$thm-dim-deep-purple-3 : mat.define-light-theme((
+  color: $deep-purple-color
+));
+$thm-dim-deep-purple-4 : mat.define-light-theme((
+  color: $deep-purple-color
+));
+
+$thm-dim-deep-orange-0 : mat.define-light-theme((
+  color: $deep-orange-color
+));
+
+$thm-dim-deep-orange-1 : mat.define-light-theme((
+  color: $deep-orange-color
+));
+
+$thm-dim-deep-orange-2 : mat.define-light-theme((
+  color: $deep-orange-color
+));
+$thm-dim-deep-orange-3 : mat.define-light-theme((
+  color: $deep-orange-color
+));
+$thm-dim-deep-orange-4 : mat.define-light-theme((
+  color: $deep-orange-color
+));
+
+$thm-dim-teal-0 : mat.define-light-theme((
+  color: $teal-color
+));
+
+$thm-dim-teal-1 : mat.define-light-theme((
+  color: $teal-color
+));
+
+$thm-dim-teal-2 : mat.define-light-theme((
+  color: $teal-color
+));
+$thm-dim-teal-3 : mat.define-light-theme((
+  color: $teal-color
+));
+$thm-dim-teal-4 : mat.define-light-theme((
+  color: $teal-color
+));

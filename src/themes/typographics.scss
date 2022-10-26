@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+
+$level-0-body-1: mat.define-typography-level(
+  $font-weight: 400,
+  $font-size: 14px,
+  $line-height: 18px
+);
+
+
+$typo-0 : mat.define-typographic-config(
+  $body-1: $level-0-body-1
+);
