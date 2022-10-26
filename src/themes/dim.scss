@@ -1,113 +1,249 @@
 @use '@angular/material' as mat;
-//@include mat.core();
+@include mat.core();
 
 @import 'colors.scss';
 @import 'typographics.scss';
 
-$thm-dim-blue-0 : mat.define-light-theme((
-  color: $blue-color
+$thm-dim-blue-0 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-0
+));
+$thm-dim-blue-1 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-1
+));
+$thm-dim-blue-2 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-2
+));
+$thm-dim-blue-3 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-3
 ));
 
-$thm-dim-blue-1 : mat.define-light-theme((
-  color: $blue-color
+$thm-dim-blue-4 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-4
 ));
 
-$thm-dim-blue-2 : mat.define-light-theme((
-  color: $blue-color
-));
-$thm-dim-blue-3 : mat.define-light-theme((
-  color: $blue-color
-));
-$thm-dim-blue-4 : mat.define-light-theme((
-  color: $blue-color
+$thm-dim-yellow-0 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-0
 ));
 
-$thm-dim-yellow-0 : mat.define-light-theme((
-  color: $yellow-color
+$thm-dim-yellow-1 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-1
 ));
 
-$thm-dim-yellow-1 : mat.define-light-theme((
-  color: $yellow-color
+$thm-dim-yellow-2 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-2
+));
+$thm-dim-yellow-3 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-3
+));
+$thm-dim-yellow-4 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-4
 ));
 
-$thm-dim-yellow-2 : mat.define-light-theme((
-  color: $yellow-color
-));
-$thm-dim-yellow-3 : mat.define-light-theme((
-  color: $yellow-color
-));
-$thm-dim-yellow-4 : mat.define-light-theme((
-  color: $yellow-color
+$thm-dim-pink-0 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-0
 ));
 
-$thm-dim-pink-0 : mat.define-light-theme((
-  color: $pink-color
+$thm-dim-pink-1 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-1
 ));
 
-$thm-dim-pink-1 : mat.define-light-theme((
-  color: $pink-color
+$thm-dim-pink-2 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-2
+));
+$thm-dim-pink-3 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-3
+));
+$thm-dim-pink-4 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-4
 ));
 
-$thm-dim-pink-2 : mat.define-light-theme((
-  color: $pink-color
-));
-$thm-dim-pink-3 : mat.define-light-theme((
-  color: $pink-color
-));
-$thm-dim-pink-4 : mat.define-light-theme((
-  color: $pink-color
+$thm-dim-deep-purple-0 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-0
 ));
 
-$thm-dim-deep-purple-0 : mat.define-light-theme((
-  color: $deep-purple-color
+$thm-dim-deep-purple-1 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-1
 ));
 
-$thm-dim-deep-purple-1 : mat.define-light-theme((
-  color: $deep-purple-color
+$thm-dim-deep-purple-2 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-2
+));
+$thm-dim-deep-purple-3 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-3
+));
+$thm-dim-deep-purple-4 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-4
 ));
 
-$thm-dim-deep-purple-2 : mat.define-light-theme((
-  color: $deep-purple-color
-));
-$thm-dim-deep-purple-3 : mat.define-light-theme((
-  color: $deep-purple-color
-));
-$thm-dim-deep-purple-4 : mat.define-light-theme((
-  color: $deep-purple-color
+$thm-dim-deep-orange-0 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-0
 ));
 
-$thm-dim-deep-orange-0 : mat.define-light-theme((
-  color: $deep-orange-color
+$thm-dim-deep-orange-1 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-1
 ));
 
-$thm-dim-deep-orange-1 : mat.define-light-theme((
-  color: $deep-orange-color
+$thm-dim-deep-orange-2 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-2
+));
+$thm-dim-deep-orange-3 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-3
+));
+$thm-dim-deep-orange-4 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-4
 ));
 
-$thm-dim-deep-orange-2 : mat.define-light-theme((
-  color: $deep-orange-color
-));
-$thm-dim-deep-orange-3 : mat.define-light-theme((
-  color: $deep-orange-color
-));
-$thm-dim-deep-orange-4 : mat.define-light-theme((
-  color: $deep-orange-color
+$thm-dim-teal-0 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-0
 ));
 
-$thm-dim-teal-0 : mat.define-light-theme((
-  color: $teal-color
+$thm-dim-teal-1 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-1
 ));
 
-$thm-dim-teal-1 : mat.define-light-theme((
-  color: $teal-color
+$thm-dim-teal-2 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-2
+));
+$thm-dim-teal-3 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-3
+));
+$thm-dim-teal-4 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-4
 ));
 
-$thm-dim-teal-2 : mat.define-light-theme((
-  color: $teal-color
-));
-$thm-dim-teal-3 : mat.define-light-theme((
-  color: $teal-color
-));
-$thm-dim-teal-4 : mat.define-light-theme((
-  color: $teal-color
-));
+
+.thm-dim-blue-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-dim-blue-0);
+}
+.thm-dim-blue-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-dim-blue-1);
+}
+.thm-dim-blue-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-dim-blue-2);
+}
+.thm-dim-blue-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-dim-blue-3);
+}
+.thm-dim-blue-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-dim-blue-4);
+}
+
+.thm-dim-yellow-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-dim-yellow-0);
+}
+.thm-dim-yellow-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-dim-yellow-1);
+}
+.thm-dim-yellow-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-dim-yellow-2);
+}
+.thm-dim-yellow-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-dim-yellow-3);
+}
+.thm-dim-yellow-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-dim-yellow-4);
+}
+
+.thm-dim-pink-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-dim-pink-0);
+}
+.thm-dim-pink-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-dim-pink-1);
+}
+.thm-dim-pink-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-dim-pink-2);
+}
+.thm-dim-pink-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-dim-pink-3);
+}
+.thm-dim-pink-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-dim-pink-4);
+}
+
+
+.thm-dim-deep-purple-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-dim-deep-purple-0);
+}
+.thm-dim-deep-purple-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-dim-deep-purple-1);
+}
+.thm-dim-deep-purple-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-dim-deep-purple-2);
+}
+.thm-dim-deep-purple-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-dim-deep-purple-3);
+}
+.thm-dim-deep-purple-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-dim-deep-purple-4);
+}
+
+.thm-dim-deep-orange-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-dim-deep-orange-0);
+}
+.thm-dim-deep-orange-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-dim-deep-orange-1);
+}
+.thm-dim-deep-orange-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-dim-deep-orange-2);
+}
+.thm-dim-deep-orange-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-dim-deep-orange-3);
+}
+.thm-dim-deep-orange-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-dim-deep-orange-4);
+}
+
+.thm-dim-teal-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-dim-teal-0);
+}
+.thm-dim-teal-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-dim-teal-1);
+}
+.thm-dim-teal-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-dim-teal-2);
+}
+.thm-dim-teal-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-dim-teal-3);
+}
+.thm-dim-teal-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-dim-teal-4);
+}
+
+.dim{
+  background-color: rgb(21, 32, 43) !important;
+  scrollbar-color: rgb(92, 110, 126) rgb(30, 39, 50) !important;
+  --sub-color: rgb(139, 152, 165);
+  .sub-text {
+    color: rgb(139, 152, 165);
+  }
+}

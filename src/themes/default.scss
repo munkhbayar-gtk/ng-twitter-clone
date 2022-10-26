@@ -1,15 +1,249 @@
 @use '@angular/material' as mat;
 @include mat.core();
-$default-primary : mat.define-palette(mat.$teal-palette);
-$default-accent : mat.define-palette(mat.$teal-palette);
 
-$default-theme-2 : mat.define-light-theme((
-  color: (
-    primary: $default-primary,
-    accent: $default-accent
-  )
+@import 'colors.scss';
+@import 'typographics.scss';
+
+$thm-default-blue-0 : mat.define-light-theme((
+  color: $blue-color, typography: $typo-0
+));
+$thm-default-blue-1 : mat.define-light-theme((
+  color: $blue-color, typography: $typo-1
+));
+$thm-default-blue-2 : mat.define-light-theme((
+  color: $blue-color, typography: $typo-2
+));
+$thm-default-blue-3 : mat.define-light-theme((
+  color: $blue-color, typography: $typo-3
 ));
 
-.default-theme-2 {
-  @include mat.all-component-themes($default-theme-2);
+$thm-default-blue-4 : mat.define-light-theme((
+  color: $blue-color, typography: $typo-4
+));
+
+$thm-default-yellow-0 : mat.define-light-theme((
+  color: $yellow-color, typography: $typo-0
+));
+
+$thm-default-yellow-1 : mat.define-light-theme((
+  color: $yellow-color, typography: $typo-1
+));
+
+$thm-default-yellow-2 : mat.define-light-theme((
+  color: $yellow-color, typography: $typo-2
+));
+$thm-default-yellow-3 : mat.define-light-theme((
+  color: $yellow-color, typography: $typo-3
+));
+$thm-default-yellow-4 : mat.define-light-theme((
+  color: $yellow-color, typography: $typo-4
+));
+
+$thm-default-pink-0 : mat.define-light-theme((
+  color: $pink-color, typography: $typo-0
+));
+
+$thm-default-pink-1 : mat.define-light-theme((
+  color: $pink-color, typography: $typo-1
+));
+
+$thm-default-pink-2 : mat.define-light-theme((
+  color: $pink-color, typography: $typo-2
+));
+$thm-default-pink-3 : mat.define-light-theme((
+  color: $pink-color, typography: $typo-3
+));
+$thm-default-pink-4 : mat.define-light-theme((
+  color: $pink-color, typography: $typo-4
+));
+
+$thm-default-deep-purple-0 : mat.define-light-theme((
+  color: $deep-purple-color, typography: $typo-0
+));
+
+$thm-default-deep-purple-1 : mat.define-light-theme((
+  color: $deep-purple-color, typography: $typo-1
+));
+
+$thm-default-deep-purple-2 : mat.define-light-theme((
+  color: $deep-purple-color, typography: $typo-2
+));
+$thm-default-deep-purple-3 : mat.define-light-theme((
+  color: $deep-purple-color, typography: $typo-3
+));
+$thm-default-deep-purple-4 : mat.define-light-theme((
+  color: $deep-purple-color, typography: $typo-4
+));
+
+$thm-default-deep-orange-0 : mat.define-light-theme((
+  color: $deep-orange-color, typography: $typo-0
+));
+
+$thm-default-deep-orange-1 : mat.define-light-theme((
+  color: $deep-orange-color, typography: $typo-1
+));
+
+$thm-default-deep-orange-2 : mat.define-light-theme((
+  color: $deep-orange-color, typography: $typo-2
+));
+$thm-default-deep-orange-3 : mat.define-light-theme((
+  color: $deep-orange-color, typography: $typo-3
+));
+$thm-default-deep-orange-4 : mat.define-light-theme((
+  color: $deep-orange-color, typography: $typo-4
+));
+
+$thm-default-teal-0 : mat.define-light-theme((
+  color: $teal-color, typography: $typo-0
+));
+
+$thm-default-teal-1 : mat.define-light-theme((
+  color: $teal-color, typography: $typo-1
+));
+
+$thm-default-teal-2 : mat.define-light-theme((
+  color: $teal-color, typography: $typo-2
+));
+$thm-default-teal-3 : mat.define-light-theme((
+  color: $teal-color, typography: $typo-3
+));
+$thm-default-teal-4 : mat.define-light-theme((
+  color: $teal-color, typography: $typo-4
+));
+
+
+.thm-default-blue-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-default-blue-0);
+}
+.thm-default-blue-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-default-blue-1);
+}
+.thm-default-blue-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-default-blue-2);
+}
+.thm-default-blue-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-default-blue-3);
+}
+.thm-default-blue-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-default-blue-4);
+}
+
+.thm-default-yellow-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-default-yellow-0);
+}
+.thm-default-yellow-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-default-yellow-1);
+}
+.thm-default-yellow-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-default-yellow-2);
+}
+.thm-default-yellow-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-default-yellow-3);
+}
+.thm-default-yellow-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-default-yellow-4);
+}
+
+.thm-default-pink-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-default-pink-0);
+}
+.thm-default-pink-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-default-pink-1);
+}
+.thm-default-pink-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-default-pink-2);
+}
+.thm-default-pink-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-default-pink-3);
+}
+.thm-default-pink-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-default-pink-4);
+}
+
+
+.thm-default-deep-purple-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-default-deep-purple-0);
+}
+.thm-default-deep-purple-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-default-deep-purple-1);
+}
+.thm-default-deep-purple-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-default-deep-purple-2);
+}
+.thm-default-deep-purple-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-default-deep-purple-3);
+}
+.thm-default-deep-purple-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-default-deep-purple-4);
+}
+
+.thm-default-deep-orange-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-default-deep-orange-0);
+}
+.thm-default-deep-orange-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-default-deep-orange-1);
+}
+.thm-default-deep-orange-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-default-deep-orange-2);
+}
+.thm-default-deep-orange-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-default-deep-orange-3);
+}
+.thm-default-deep-orange-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-default-deep-orange-4);
+}
+
+.thm-default-teal-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-default-teal-0);
+}
+.thm-default-teal-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-default-teal-1);
+}
+.thm-default-teal-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-default-teal-2);
+}
+.thm-default-teal-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-default-teal-3);
+}
+.thm-default-teal-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-default-teal-4);
+}
+
+.default {
+  background-color: rgb(255, 255, 255) !important;
+  scrollbar-color: rgb(185, 202, 211) rgb(247, 249, 249) !important;
+  --sub-color: rgb(83, 100, 113);
+  .sub-text {
+    color: rgb(83, 100, 113);
+  }
 }

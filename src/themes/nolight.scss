@@ -1,0 +1,250 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import 'colors.scss';
+@import 'typographics.scss';
+
+$thm-nolight-blue-0 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-0
+));
+$thm-nolight-blue-1 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-1
+));
+$thm-nolight-blue-2 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-2
+));
+$thm-nolight-blue-3 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-3
+));
+
+$thm-nolight-blue-4 : mat.define-dark-theme((
+  color: $blue-color, typography: $typo-4
+));
+
+$thm-nolight-yellow-0 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-0
+));
+
+$thm-nolight-yellow-1 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-1
+));
+
+$thm-nolight-yellow-2 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-2
+));
+$thm-nolight-yellow-3 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-3
+));
+$thm-nolight-yellow-4 : mat.define-dark-theme((
+  color: $yellow-color, typography: $typo-4
+));
+
+$thm-nolight-pink-0 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-0
+));
+
+$thm-nolight-pink-1 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-1
+));
+
+$thm-nolight-pink-2 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-2
+));
+$thm-nolight-pink-3 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-3
+));
+$thm-nolight-pink-4 : mat.define-dark-theme((
+  color: $pink-color, typography: $typo-4
+));
+
+$thm-nolight-deep-purple-0 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-0
+));
+
+$thm-nolight-deep-purple-1 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-1
+));
+
+$thm-nolight-deep-purple-2 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-2
+));
+$thm-nolight-deep-purple-3 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-3
+));
+$thm-nolight-deep-purple-4 : mat.define-dark-theme((
+  color: $deep-purple-color, typography: $typo-4
+));
+
+$thm-nolight-deep-orange-0 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-0
+));
+
+$thm-nolight-deep-orange-1 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-1
+));
+
+$thm-nolight-deep-orange-2 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-2
+));
+$thm-nolight-deep-orange-3 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-3
+));
+$thm-nolight-deep-orange-4 : mat.define-dark-theme((
+  color: $deep-orange-color, typography: $typo-4
+));
+
+$thm-nolight-teal-0 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-0
+));
+
+$thm-nolight-teal-1 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-1
+));
+
+$thm-nolight-teal-2 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-2
+));
+$thm-nolight-teal-3 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-3
+));
+$thm-nolight-teal-4 : mat.define-dark-theme((
+  color: $teal-color, typography: $typo-4
+));
+
+
+.thm-nolight-blue-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-nolight-blue-0);
+}
+.thm-nolight-blue-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-nolight-blue-1);
+}
+.thm-nolight-blue-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-nolight-blue-2);
+}
+.thm-nolight-blue-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-nolight-blue-3);
+}
+.thm-nolight-blue-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-nolight-blue-4);
+}
+
+.thm-nolight-yellow-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-nolight-yellow-0);
+}
+.thm-nolight-yellow-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-nolight-yellow-1);
+}
+.thm-nolight-yellow-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-nolight-yellow-2);
+}
+.thm-nolight-yellow-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-nolight-yellow-3);
+}
+.thm-nolight-yellow-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-nolight-yellow-4);
+}
+
+.thm-nolight-pink-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-nolight-pink-0);
+}
+.thm-nolight-pink-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-nolight-pink-1);
+}
+.thm-nolight-pink-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-nolight-pink-2);
+}
+.thm-nolight-pink-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-nolight-pink-3);
+}
+.thm-nolight-pink-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-nolight-pink-4);
+}
+
+
+.thm-nolight-deep-purple-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-nolight-deep-purple-0);
+}
+.thm-nolight-deep-purple-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-nolight-deep-purple-1);
+}
+.thm-nolight-deep-purple-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-nolight-deep-purple-2);
+}
+.thm-nolight-deep-purple-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-nolight-deep-purple-3);
+}
+.thm-nolight-deep-purple-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-nolight-deep-purple-4);
+}
+
+.thm-nolight-deep-orange-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-nolight-deep-orange-0);
+}
+.thm-nolight-deep-orange-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-nolight-deep-orange-1);
+}
+.thm-nolight-deep-orange-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-nolight-deep-orange-2);
+}
+.thm-nolight-deep-orange-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-nolight-deep-orange-3);
+}
+.thm-nolight-deep-orange-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-nolight-deep-orange-4);
+}
+
+.thm-nolight-teal-0 {
+  @include mat.core($typo-0);
+  @include mat.all-component-themes($thm-nolight-teal-0);
+}
+.thm-nolight-teal-1 {
+  @include mat.core($typo-1);
+  @include mat.all-component-themes($thm-nolight-teal-1);
+}
+.thm-nolight-teal-2 {
+  @include mat.core($typo-2);
+  @include mat.all-component-themes($thm-nolight-teal-2);
+}
+.thm-nolight-teal-3 {
+  @include mat.core($typo-3);
+  @include mat.all-component-themes($thm-nolight-teal-3);
+}
+.thm-nolight-teal-4 {
+  @include mat.core($typo-4);
+  @include mat.all-component-themes($thm-nolight-teal-4);
+}
+
+.nolight{
+  background-color: rgb(0, 0, 0) !important;
+  scrollbar-color: rgb(62, 65, 68) rgb(22, 24, 28) !important;
+  --sub-color: rgb(113, 118, 123);
+
+  .sub-text {
+    color: rgb(113, 118, 123);
+  }
+}
