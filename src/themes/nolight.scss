@@ -1,8 +1,10 @@
 @use '@angular/material' as mat;
-@include mat.core();
+@use 'mixin' as mix;
 
 @import 'colors.scss';
 @import 'typographics.scss';
+
+@include mat.core();
 
 @function merge($color, $typo) {
   $ret : mat.define-dark-theme((
@@ -10,14 +12,9 @@
   ));
   //background-color: rgb(0, 0, 0)
   //color: rgb(231, 233, 234);
-  @return $ret; //modifyColors($ret, 'rgb(231, 233, 234)', 'rgb(0, 0, 0)');
+  @return modifyColors($ret, rgb(231, 233, 234), black);
 }
 
-/*
-$thm-nolight-blue-0 : mat.define-dark-theme((
-  color: $blue-color, typography: $typo-0
-));
-*/
 $thm-nolight-blue-0 : merge($blue-color, $typo-0);
 $thm-nolight-blue-1 : merge($blue-color, $typo-1);
 $thm-nolight-blue-2 : merge($blue-color, $typo-2);
@@ -57,6 +54,7 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
 .thm-nolight-blue-0 {
   @include mat.core($typo-0);
   @include mat.all-component-themes($thm-nolight-blue-0);
+  @include mix.color($thm-nolight-blue-0);
 }
 .thm-nolight-blue-1 {
   @include mat.core($typo-1);
@@ -179,16 +177,28 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
 .thm-nolight-teal-4 {
   @include mat.core($typo-4);
   @include mat.all-component-themes($thm-nolight-teal-4);
-
 }
 
 .nolight{
   //background-color: rgb(0, 0, 0) !important;
-  scrollbar-color: rgb(62, 65, 68) rgb(22, 24, 28) !important;
-  --sub-color: rgb(113, 118, 123);
-  //color: rgb(231, 233, 234);
-  //color: red !important;
+  scrollbar-color: rgb(92, 110, 126) rgb(30, 39, 50) !important;
+  --sub-color: rgb(139, 152, 165);
   .sub-text {
-    color: rgb(113, 118, 123);
+    color: rgb(139, 152, 165);
+  }
+
+  .mat-body,
+  .mat-body-2,
+  .mat-caption,
+  .mat-h3,
+  .mat-h2{
+    margin: 0 0 0 0 ;
+  }
+
+  .hoverAnimation:hover {
+    //#303030
+    background-color: rgba(48, 48, 48, 0.1);//rgba(0, 0, 0, 0.5);
   }
 }
+
+

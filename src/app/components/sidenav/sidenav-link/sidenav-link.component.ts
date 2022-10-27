@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-link',
@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavLinkComponent implements OnInit {
 
+  @Input('active')
+  active : boolean = false;
+
+  @Input('text')
+  text: string = '';
+
+  @Input('icon')
+  icon : string = ''
   constructor() { }
 
   ngOnInit() {

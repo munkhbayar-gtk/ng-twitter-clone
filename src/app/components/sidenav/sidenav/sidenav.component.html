@@ -1,0 +1,22 @@
+<div id="nav-container" style="height: 100vh; display: flex; flex-direction: column;">
+  <mat-icon svgIcon="twitter" ngClass="hoverAnimation" style="width: 30px; height: 30px"></mat-icon>
+  <nav style="">
+    <app-sidenav-link text="Home" [active]="true"></app-sidenav-link>
+    <app-sidenav-link text="Explore" [active]="true"></app-sidenav-link>
+    <app-sidenav-link text="Notifications" [active]="true"></app-sidenav-link>
+    <app-sidenav-link text="Messages" [active]="true"></app-sidenav-link>
+    <app-sidenav-link text="Profile" [active]="true"></app-sidenav-link>
+    <app-sidenav-link text="More" [active]="true"></app-sidenav-link>
+  </nav>
+  <button [hidden]="sz.on == 'sm'" mat-raised-button color="primary" style="border-radius: 999px; width: 100%; min-height: 47px;">Tweet</button>
+  <div style="display: flex; align-items: flex-end; gap: 10px; background-color: blue; flex: 1 1 auto">
+    <div style="display: flex; align-items: center;">
+      <img src="../../../../assets/avatar.jpg" width="50" height="50" style="border-radius: 50%">
+      <div style="display: flex; flex-direction: column">
+        <span class="mat-h3">Munkhbayar G</span>
+        <span class="mat-h3 sub-text">@mbr_gtk</span>
+      </div>
+      <mat-icon>more</mat-icon>
+    </div>
+  </div>
+</div>

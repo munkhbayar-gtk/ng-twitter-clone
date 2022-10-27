@@ -29,6 +29,14 @@ mat.$theme-ignore-duplication-warnings: true;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.hoverAnimation{
+  padding: 10px;
+  transition: 200ms ease-out;
+  border-radius: 999px;
+  transition-property: background-color, box-shadow;
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -38,6 +46,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .flex {
   display: flex;
 }
-
-
-

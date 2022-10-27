@@ -1,11 +1,18 @@
-<div id="app-container" [ngClass]="[currentThemeName, currentTheme].join(' ')" class="mat-app-background">
-  <header role="banner">
-    Left navbar bad ass
-    '{{sz.activeQuery | json}}'<br>
-    '{{sz.on}}'
-    <span classNames="hidden sm:inline sm:text">Small text</span>
-  </header>
-  <main role="main">
-    main
-  </main>
-</div>
+<div  [ngClass]="[currentThemeName, currentTheme, 'after-theme-applied'].join(' ')" style="height: 100%" class="mat-app-background">
+  <mat-sidenav-container style="height: 100%">
+    <mat-sidenav *ngIf="sz.on == 'sm'" mode="over" opened>
+      Left Nav on Mobile
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div id="app-container">
+        <header role="banner"
+            *ngIf="sz.on != 'sm'"
+             >
+            <app-sidenav></app-sidenav>
+        </header>
+        <main role="main" style="width: auto">
+          <span color="primary">main</span>
+        </main>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

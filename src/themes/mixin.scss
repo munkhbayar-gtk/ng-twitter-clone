@@ -1,0 +1,28 @@
+//@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  $color-config : mat.get-color-config($theme);
+  $pr: map-get($color-config, 'primary');
+  $ac: map-get($color-config, 'accent');
+  $wr: map-get($color-config, 'warn');
+
+  .primary {
+    color: mat.get-color-from-palette($pr, '500');
+  }
+  .accent {
+    color: mat.get-color-from-palette($ac, '500');
+  }
+  .warn {
+    color: mat.get-color-from-palette($wr, '500');
+  }
+  .primary-bg {
+    background-color: mat.get-color-from-palette($pr, '500');;
+  }
+  .primary-ac {
+    background-color: mat.get-color-from-palette($ac, '500');;
+  }
+  .primary-wr {
+    background-color: mat.get-color-from-palette($wr, '500');;
+  }
+}

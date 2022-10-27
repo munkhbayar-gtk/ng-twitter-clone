@@ -6,7 +6,7 @@
 
 @function merge($color, $typo) {
   $ret : mat.define-light-theme((
-    color: $color, typography: $typo
+    color: $color//, typography: $typo
   ));
   //background-color: rgb(0, 0, 0)
   //color: rgb(231, 233, 234);

@@ -48,7 +48,6 @@ export class SzDirective implements OnInit, DoCheck{
     const extractedClzzs : string[] = [];
     clzzs.forEach(clz=>{
         const idx = clz.indexOf(':');
-        //console.log('splits', idx, clz);
         if(idx < 0) {
           this.parseClassToStyles(extractedClzzs, clz);
         }else{
@@ -73,16 +72,15 @@ export class SzDirective implements OnInit, DoCheck{
       arr.push(vl);
     }
   }
-  private toggleClass(klass : string, enabled : true) {
-    klass = klass.trim();
-    if(klass) {
-      klass.split(/\s+/g).forEach(klass=>{
-        if(enabled){
-          this.renderer.addClass(this.el.nativeElement, klass);
-        }else{
-          this.renderer.removeClass(this.el.nativeElement, klass);
-        }
-      });
-    }
+}
+
+@Directive({
+  selector: '[styles]'
+})
+export class SzStyleDirective implements OnInit, DoCheck{
+  ngOnInit(): void {
   }
+  ngDoCheck(): void {
+  }
+
 }
