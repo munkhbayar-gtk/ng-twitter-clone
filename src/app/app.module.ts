@@ -12,6 +12,8 @@ import { SzDirective } from './directives/sz.directive';
 import { SidenavLinkComponent } from './components/sidenav/sidenav-link/sidenav-link.component';
 import { MatIconCustomModule } from './mat-icon-custom.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TrendsComponent } from './components/main/trends/trends.component';
+import { FeedsComponent } from './components/main/feeds/feeds.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     SidenavComponent,
     SidenavLinkComponent,
 
-    SzDirective
+    SzDirective,
+      TrendsComponent,
+      FeedsComponent
   ],
   imports: [
     HttpClientModule,

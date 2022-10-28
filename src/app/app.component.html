@@ -1,17 +1,21 @@
-<div  [ngClass]="[currentThemeName, currentTheme, 'after-theme-applied'].join(' ')" style="height: 100%" class="mat-app-background">
+<div  [ngClass]="[currentThemeName, currentTheme, 'after-theme-applied'].join(' ')"
+style="height: 100%" class="mat-app-background">
   <mat-sidenav-container style="height: 100%">
     <mat-sidenav *ngIf="sz.on == 'sm'" mode="over" opened>
       Left Nav on Mobile
     </mat-sidenav>
     <mat-sidenav-content>
       <div id="app-container">
-        <header role="banner"
+        <header role="banner" style="flex-grow: 1; height: 100%; "
             *ngIf="sz.on != 'sm'"
              >
             <app-sidenav></app-sidenav>
         </header>
-        <main role="main" style="width: auto">
-          <span color="primary">main</span>
+        <main role="main" style="background-color: green; flex-grow: 1;">
+          <div classNames="flex" style="background-color: cyan; width: 990px;">
+            <app-feeds-list></app-feeds-list>
+            <app-trends-list *ngIf="sz.on !== 'sm'"></app-trends-list>
+          </div>
         </main>
       </div>
     </mat-sidenav-content>

@@ -1,3 +1,4 @@
+import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -15,7 +16,7 @@ export class SidenavLinkComponent implements OnInit {
 
   @Input('icon')
   icon : string = ''
-  constructor() { }
+  constructor(public sz : ScreenMonitorService) { }
 
   ngOnInit() {
   }

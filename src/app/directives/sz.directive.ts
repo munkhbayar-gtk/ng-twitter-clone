@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Directive, DoCheck, ElementRef, IterableDiffers, KeyValueDiffers, OnInit, Renderer2 } from '@angular/core';
 import { ScreenMonitorService } from '../services/screen-monitor.service';
 
@@ -52,12 +52,19 @@ export class SzDirective implements OnInit, DoCheck{
           this.parseClassToStyles(extractedClzzs, clz);
         }else{
           const splits = clz.split(':');
-          const sz = splits[0];
+          let sz = splits[0];
           const eClz = splits[1];
+
           if(this.szm.activeQuery.name === sz) {
             this.parseClassToStyles(extractedClzzs, eClz);
           }else{
             //console.log('off-sz', clz);
+            if(sz.startsWith('!')){
+              sz = sz.substring(1);
+              if(this.szm.activeQuery.name !== sz){
+                this.parseClassToStyles(extractedClzzs, eClz);
+              }
+            }
           }
         }
     });
@@ -78,9 +85,22 @@ export class SzDirective implements OnInit, DoCheck{
   selector: '[styles]'
 })
 export class SzStyleDirective implements OnInit, DoCheck{
+  private ngStyle: any;
+
+  constructor(
+    private _iterableDiffers : IterableDiffers,
+    private _keyValueDiffers : KeyValueDiffers,
+    private el : ElementRef<HTMLElement>,
+    private szm : ScreenMonitorService,
+    private renderer : Renderer2){
+
+    }
   ngOnInit(): void {
+    this.ngStyle = new NgStyle(this.el, this._keyValueDiffers, this.renderer);
   }
   ngDoCheck(): void {
+
+    this.ngStyle.ngDoCheck();
   }
 
 }

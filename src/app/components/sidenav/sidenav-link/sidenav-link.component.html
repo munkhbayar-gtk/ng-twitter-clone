@@ -1,4 +1,6 @@
-<div class="hoverAnimation" id="sidenav-link-container">
-  <mat-icon>insert_emoticon</mat-icon>
-  <span class="mat-h2">{{text}}</span>
+<div style="display: flex">
+  <div class="hoverAnimation" id="sidenav-link-container" classNames="md:just-center md:md-container">
+    <mat-icon>insert_emoticon</mat-icon>
+    <span *ngIf="sz.on != 'md'" class="mat-h2">{{text}}</span>
+  </div>
 </div>

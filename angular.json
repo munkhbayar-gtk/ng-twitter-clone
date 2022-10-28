@@ -37,7 +37,9 @@
               "src/themes/dim.scss",
               "src/themes/nolight.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/helpers.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -20,5 +20,6 @@ export class AppComponent {
 
   constructor(public sz : ScreenMonitorService) {
     //sz.setup();
+    console.log('in-test');//, has(1, [1,2,3]));//[1,2,3].in(1))
   }
 }
