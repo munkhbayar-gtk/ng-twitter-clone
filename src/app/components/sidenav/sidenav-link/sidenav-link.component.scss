@@ -1,17 +1,20 @@
 #sidenav-link-container {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 11px;
-  gap: 10px;
-  padding-left: 10px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 25px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 11px;
+
+  gap: 15px;
 }
 
-.md-container {
-  height: 30px;
-  width: 30px;
+.no-r-p {
+  padding-right: 11px;
 }
+.r-p {
+  padding-right: 25px;
+}
+.md-w {
+  width: 46.5px;
+}
+

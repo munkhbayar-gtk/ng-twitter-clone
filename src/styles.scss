@@ -50,3 +50,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: center;
   justify-items: center;
 }
+.just-end {
+  justify-content: flex-end;
+  justify-items: flex-end;
+}

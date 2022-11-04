@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, OnInit, HostBinding, HostListener, Renderer2 } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { delay, filter } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -42,16 +42,30 @@ export interface MediaQuery {
   query: string,
   active: boolean
 }
+/*
+sm : `(min-width: 500px) and (max-width: 767px)`,
+    md : `(min-width: 768px) and (max-width: 1265px)`,
+    lg : `(min-width: 1266px) and (max-width: 1279px)`,
+    xl : `(min-width: 1280px) and (max-width: 1535px)`,
+    xxl : `(min-width: 1536px)`,
+    hsm: `(min-height: 768px)`
+*/
 @Injectable({
   providedIn: 'root'
 })
 export class ScreenMonitorService{
   private mediaQueries : any = {
-    sm : `(max-width: 767px)`,
-    md : `(min-width: 768px) and (max-width: 1023px)`,
-    lg : `(min-width: 1024px) and (max-width: 1279px)`,
+    sm : `(max-width: 499px)`,
+    md : `(min-width: 500px) and (max-width: 1265px)`,
+    lg : `(min-width: 1266px) and (max-width: 1279px)`,
     xl : `(min-width: 1280px) and (max-width: 1535px)`,
-    xxl : `(min-width: 1536px)`
+    xxl : `(min-width: 1536px)`,
+    hsm: `(min-height: 768px)`
+  }
+
+  private wh : number = window.innerHeight;
+  get windowHeight() : number {
+    return this.wh;
   }
 
   private STATES : any= {};
@@ -72,7 +86,7 @@ export class ScreenMonitorService{
   }
   monitor = new Subject<void>();
 
-  constructor(private observer : BreakpointObserver) {
+  constructor(private observer : BreakpointObserver ) {
     this.setup();
   }
   private setup(): void {
@@ -86,6 +100,7 @@ export class ScreenMonitorService{
         this.monitor.next();
     });
     console.log('observing ... ');
+
   }
 
   private onBreadpoint(br: any, sizes: string[]) {

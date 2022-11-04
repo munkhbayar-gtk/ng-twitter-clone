@@ -13,28 +13,18 @@ export class MatIconCustomModule {
   constructor(
     private domSanitizer : DomSanitizer,
     public matIconRegistry : MatIconRegistry){
-
       this.addIcons();
   }
 
   private addIcons() : void{
     this.addIcon('twitter', 'twitter');
-    /*
-    this.addIcon('smile', 'smile');
-    this.addIcon('teddy', 'teddy');
-    this.addIcon('cup', 'cup');
-    this.addIcon('soccer', 'soccer');
-    this.addIcon('car', 'car');
-    this.addIcon('bulb', 'bulb');
-    this.addIcon('hashtag', 'hashtag');
-    this.addIcon('flag', 'flag');
+    this.addIcon('feather', 'feather');
+    ['bookmark', 'hashtag', 'home', 'list','bookmark', 'message','more','notif','profile']
+    .forEach(svg=>{
+      this.addIcon(svg, svg);
+      this.addIcon(`${svg}-outline`,`${svg}-outline`);
+    });
 
-    this.addIcon('attach_file', 'attach_file');
-    this.addIcon('sticker', 'sticker');
-    this.addIcon('gif', 'gif');
-    this.addIcon('close', 'close');
-    this.addIcon('clock', 'clock');
-    */
   }
   private addIcon(name : string, file: string) {
     this.matIconRegistry.addSvgIcon(name, this.path(file));

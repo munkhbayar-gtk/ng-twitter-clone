@@ -1,19 +1,26 @@
 <div id="nav-container"
-  style="width: 275px; height: 100vh; display: flex; flex-direction: column;">
-  <mat-icon svgIcon="twitter" ngClass="hoverAnimation" style="width: 30px; height: 30px"></mat-icon>
-  <nav style="display: flex; flex-direction: column;">
-    <app-sidenav-link text="Home" [active]="true"></app-sidenav-link>
-    <app-sidenav-link text="Explore" [active]="true"></app-sidenav-link>
-    <app-sidenav-link text="Notifications" [active]="true"></app-sidenav-link>
-    <app-sidenav-link text="Messages" [active]="true"></app-sidenav-link>
-    <app-sidenav-link text="Profile" [active]="true"></app-sidenav-link>
-    <app-sidenav-link text="More" [active]="true"></app-sidenav-link>
+  class=""
+  classNames="!md:width-full md:md-width md:just-end"
+  style=" height: 100vh; display: flex; flex-direction: column;
+  padding-left: 11px; padding-right: 11px;">
+  <mat-icon svgIcon="twitter" ngClass="hoverAnimation"
+  style="width: 30px; height: 30px"></mat-icon>
+  <nav style="display: flex; flex-direction: column;"
+  [ngStyle]="{'gap': (windowHeight > 657 ? 10 : 0) + 'px'}">
+    <app-sidenav-link (onInit)="selectedNavItem=home" #home text="Home" icon="home" [active]="true"></app-sidenav-link>
+    <app-sidenav-link text="Explore" icon="hashtag"></app-sidenav-link>
+    <app-sidenav-link text="Notifications" icon="notif"></app-sidenav-link>
+    <app-sidenav-link text="Messages" icon="message"></app-sidenav-link>
+    <app-sidenav-link *ngIf="windowHeight > 573" text="Bookmarks" icon="bookmark" ></app-sidenav-link>
+    <app-sidenav-link *ngIf="windowHeight > 573" text="Lists" icon="list" ></app-sidenav-link>
+    <app-sidenav-link text="Profile" icon="profile" ></app-sidenav-link>
+    <app-sidenav-link text="More" icon="more"></app-sidenav-link>
   </nav>
   <div style="margin-top: 10px;">
     <button *ngIf="sz.on != 'md'" mat-raised-button color="primary"
     style="border-radius: 999px; width: 227.7px; min-height: 47px;">Tweet</button>
     <button *ngIf="sz.on == 'md'"  mat-mini-fab color="primary" style="width: 47px; height: 47px;" aria-label="Example icon button with a delete icon">
-      <mat-icon>delete</mat-icon>
+      <mat-icon svgIcon="feather"></mat-icon>
     </button>
   </div>
 

@@ -1,6 +1,7 @@
 import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+// disapear two <574
+// shrink the height < 658
 @Component({
   selector: 'app-sidenav-link',
   templateUrl: './sidenav-link.component.html',
@@ -15,10 +16,16 @@ export class SidenavLinkComponent implements OnInit {
   text: string = '';
 
   @Input('icon')
-  icon : string = ''
-  constructor(public sz : ScreenMonitorService) { }
+  icon : string = '';
+
+  @Output('onSelected')
+  onSelected = new EventEmitter<void>();
+  constructor(public sz : ScreenMonitorService, public htmlElement: ElementRef<HTMLElement>) { }
 
   ngOnInit() {
   }
 
+  get windowHeight() : number{
+    return window.innerHeight;
+  }
 }

@@ -22,4 +22,13 @@ export class AppComponent {
     //sz.setup();
     console.log('in-test');//, has(1, [1,2,3]));//[1,2,3].in(1))
   }
+
+  get windowWidth() : number {
+    return window.innerWidth;
+  }
+
+  calc(w : number) : number{
+    return 600 - (w > 688 ? 0 : (688 - w));
+    //return (600 / 688) * w;
+  }
 }

@@ -1,6 +1,13 @@
-<div style="display: flex">
-  <div class="hoverAnimation" id="sidenav-link-container" classNames="md:just-center md:md-container">
-    <mat-icon>insert_emoticon</mat-icon>
-    <span *ngIf="sz.on != 'md'" class="mat-h2">{{text}}</span>
+<div (click)="this.active = true; onSelected.emit()"
+  style="display: flex; "
+  classNames="md:just-center md:md-w">
+  <div class="hoverAnimation"
+    id="sidenav-link-container"
+    classNames="md:no-r-p !md:r-p"
+    >
+    <mat-icon [svgIcon]="icon+(!active?'-outline':'')"></mat-icon>
+    <span *ngIf="sz.on != 'md'"
+    class="mat-h2"
+      [ngStyle]="active ? {'font-weight' : 600} : {}">{{text}}</span>
   </div>
 </div>
