@@ -1,0 +1,16 @@
+#pri-circle-progress-container {
+
+}
+
+#path-indicator{
+  border-radius: 50%;
+  position: relative;
+  border-color: green;
+  border-width: 3px;
+}
+#value-indicator{
+  border-radius: 50%;
+  position: absolute;
+  border-color: blue;
+  border-width: 3px;
+}

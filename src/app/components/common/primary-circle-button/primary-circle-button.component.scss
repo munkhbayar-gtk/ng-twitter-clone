@@ -1,0 +1,18 @@
+.sm {
+  width: 19px;
+  height: 19px;
+  padding: 7px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.md {
+  width: 30px;
+  height: 30px;
+  padding: 11px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.disabled {
+  cursor: default !important;
+}

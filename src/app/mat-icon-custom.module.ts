@@ -25,6 +25,10 @@ export class MatIconCustomModule {
       this.addIcon(`${svg}-outline`,`${svg}-outline`);
     });
 
+    ['image','gif','poll','emoji','schedule','location'].forEach(media=>{
+      const m = `media-${media}`;
+      this.addIcon(m, m);
+    })
   }
   private addIcon(name : string, file: string) {
     this.matIconRegistry.addSvgIcon(name, this.path(file));

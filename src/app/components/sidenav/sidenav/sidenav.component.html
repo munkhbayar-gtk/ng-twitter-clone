@@ -1,10 +1,11 @@
 <div id="nav-container"
-  class=""
   classNames="!md:width-full md:md-width md:just-end"
   style=" height: 100vh; display: flex; flex-direction: column;
   padding-left: 11px; padding-right: 11px;">
-  <mat-icon svgIcon="twitter" ngClass="hoverAnimation"
+
+  <mat-icon svgIcon="twitter" ngClass="hoverAnimation primaryColorBgHover"
   style="width: 30px; height: 30px"></mat-icon>
+
   <nav style="display: flex; flex-direction: column;"
   [ngStyle]="{'gap': (windowHeight > 657 ? 10 : 0) + 'px'}">
     <app-sidenav-link (onInit)="selectedNavItem=home" #home text="Home" icon="home" [active]="true"></app-sidenav-link>
@@ -24,16 +25,18 @@
     </button>
   </div>
 
-  <div  style="display: flex; align-items: flex-end; gap: 10px; flex-grow: 1;">
-    <div style="display: flex; flex: 1">
-      <img src="../../../../assets/avatar.jpg" width="50" height="50" style="border-radius: 50%">
-      <div *ngIf="sz.on != 'md'"style="display: flex; align-items: center; flex-grow: 1">
-        <div style="display: flex; flex-direction: column; flex-grow: 1;">
+  <div  style="display: flex; align-items: flex-end;  flex-grow: 1;width: 100%; ">
+    <div class="hoverAnimation"
+    style="display: flex; gap: 10px; padding: 11px; margin-bottom: 15px; align-items: center;width: 100%; ">
+      <img src="../../../../assets/avatar.jpg"  style="border-radius: 50%; width: 40px; height: 40px">
+      <div *ngIf="sz.on != 'md'"
+        style="display: flex; flex: 1 1 auto; align-items: center; flex-grow: 1;">
+        <div style="display: flex; flex-direction: column; gap: 3px">
           <span class="mat-h3">Munkhbayar G</span>
-          <span class="mat-h3 sub-text">@mbr_gtk</span>
+          <span class="mat-caption sub-text">@mbr_gtk</span>
         </div>
-        <mat-icon>more</mat-icon>
       </div>
+      <mat-icon style="font-weight: 100">more_horiz</mat-icon>
     </div>
   </div>
 </div>

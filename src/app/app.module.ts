@@ -14,6 +14,8 @@ import { MatIconCustomModule } from './mat-icon-custom.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TrendsComponent } from './components/main/trends/trends.component';
 import { FeedsComponent } from './components/main/feeds/feeds.component';
+import { TweetComposerComponent } from './components/main/tweet-composer/tweet-composer.component';
+import { PrimaryCircleButtonComponent } from './components/common/primary-circle-button/primary-circle-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FeedsComponent } from './components/main/feeds/feeds.component';
 
     SzDirective,
       TrendsComponent,
-      FeedsComponent
+      FeedsComponent,
+      TweetComposerComponent,
+      PrimaryCircleButtonComponent
   ],
   imports: [
     HttpClientModule,

@@ -11,8 +11,8 @@ style="height: 100%" class="mat-app-background">
              >
             <app-sidenav></app-sidenav>
         </header>
-        <main role="main" style="background-color: green; flex-grow: 1;">
-          <div classNames="flex" style="background-color: cyan; ">
+        <main role="main" style=" flex-grow: 1;">
+          <div classNames="flex">
             <app-feeds-list style="max-width: 600px; " [ngStyle]="{'width' : calc(windowWidth) + 'px'}"></app-feeds-list>
             <app-trends-list *ngIf="windowWidth > 987" [ngStyle]="{'width' : (windowWidth > 1078? 350 : 290)+'px'}"></app-trends-list>
           </div>

@@ -55,18 +55,22 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
   @include mat.core($typo-0);
   @include mat.all-component-themes($thm-nolight-blue-0);
   @include mix.color($thm-nolight-blue-0);
+  @include color-list($blue-color);
 }
 .thm-nolight-blue-1 {
   @include mat.core($typo-1);
   @include mat.all-component-themes($thm-nolight-blue-1);
+  @include color-list($blue-color);
 }
 .thm-nolight-blue-2 {
   @include mat.core($typo-2);
   @include mat.all-component-themes($thm-nolight-blue-2);
+  @include color-list($blue-color);
 }
 .thm-nolight-blue-3 {
   @include mat.core($typo-3);
   @include mat.all-component-themes($thm-nolight-blue-3);
+  @include color-list($blue-color);
 }
 .thm-nolight-blue-4 {
   @include mat.core($typo-4);
@@ -200,6 +204,7 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
     //background-color: blue;
     background-color: rgba(48, 48, 48, 0.5);//rgba(0, 0, 0, 0.5);
   }
+
 }
 
 

@@ -8,6 +8,6 @@
     <mat-icon [svgIcon]="icon+(!active?'-outline':'')"></mat-icon>
     <span *ngIf="sz.on != 'md'"
     class="mat-h2"
-      [ngStyle]="active ? {'font-weight' : 600} : {}">{{text}}</span>
+      [ngStyle]="{'font-weight' : active?500:200}">{{text}}</span>
   </div>
 </div>

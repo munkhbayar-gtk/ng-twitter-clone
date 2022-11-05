@@ -1,0 +1,16 @@
+#tweet-composer-container {
+  display: flex;
+  padding-right: 20px;
+  padding-left: 15px;
+  padding-top: 20px;
+  border-bottom: 1px solid gray;
+  gap: 11px;
+}
+#actions-container{
+  padding: 10px;
+  padding-right: 0px;
+  //border-top: 1px solid var(--accent-color); ts color service
+  border-top: 1px solid gray;
+  display: flex;
+}
+

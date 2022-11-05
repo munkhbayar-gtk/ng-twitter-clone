@@ -1,27 +1,50 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-@function getColor($palette, $prop, $hue) {
+@function getColor($palette, $prop, $hue, $opacity) {
   $color : map-get($palette, $prop);
-  @return mat.get-color-from-palette($color, $hue);
+  @return mat.get-color-from-palette($color, $hue, $opacity);
 }
 
 @function getWarn($palette) {
-  @return getColor($palette, warn, '500');
+  @return getColor($palette, warn, 500, null);
 }
 
 @function getAccent($palette) {
-  @return getColor($palette, accent, '500');
+  @return getColor($palette, accent, 500, null);
 }
 @function getPrimary($palette) {
-  @return getColor($palette, primary, '500');
+  @return getColor($palette, primary, 500, null);
 }
 
-
+@mixin color-list($color) {
+  .color-list {
+    --primary-color: getPrimary($color);
+    --accent-color: getAccent($color);
+    --warn-color: getWarn($color);
+  }
+  .primaryColor {
+    color: getPrimary($color) !important;
+  }
+  .primaryColorDisabled {
+    color: getColor($color, primary, 500, 0.5) !important;
+  }
+  .primaryColorBgDisabled {
+    background-color: getColor($color, primary, 500, 0.5) !important;
+  }
+  .primaryColorBg {
+    background-color: getColor($color, primary, 500, 0.1) !important;
+  }
+  .primaryColorBgHover:hover {
+    background-color: getColor($color, primary, 500, 0.1) !important;
+  }
+}
 $blue-primary : mat.define-palette(mat.$blue-palette);
 $blue-accent : mat.define-palette(mat.$blue-palette);
 $blue-warn: mat.define-palette(mat.$blue-palette);
 $blue-color: (primary: $blue-primary, accent: $blue-accent, warn: $blue-warn);
+
+
 
 $yellow-primary : mat.define-palette(mat.$yellow-palette);
 $yellow-accent : mat.define-palette(mat.$yellow-palette);
