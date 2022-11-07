@@ -176,7 +176,7 @@ $thm-default-teal-4 : merge($teal-color, $typo-4);
   @include mat.all-component-themes($thm-default-teal-4);
 }
 
-.default {
+.thm-default {
   background-color: rgb(255, 255, 255) !important;
   scrollbar-color: rgb(185, 202, 211) rgb(247, 249, 249) !important;
 

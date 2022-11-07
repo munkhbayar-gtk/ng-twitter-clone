@@ -1,18 +1,59 @@
-import { Component, OnInit, forwardRef, HostListener, ElementRef, AfterViewInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, ViewChild, HostListener, ElementRef, AfterViewInit, forwardRef } from '@angular/core';
+import { UntypedFormControl, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-text-editable',
   templateUrl: './text-editable.component.html',
-  styleUrls: ['./text-editable.component.scss']
+  styleUrls: ['./text-editable.component.scss'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => TextEditableComponent),
+    multi: true
+  }]
 })
-export class TextEditableComponent implements OnInit {
+export class TextEditableComponent implements OnInit, AfterViewInit,
+  ControlValueAccessor {
 
-  templateDrivenForm = 'This is contenteditable text for template-driven form';
-  myControl = new FormControl();
+  textValue = '';
+
+  writeValue(obj: any): void {
+    //this.textValue = obj;
+  }
+  registerOnChange(fn: any): void {
+  }
+  registerOnTouched(fn: any): void {
+  }
+  setDisabledState?(isDisabled: boolean): void {
+    console.log('isDisabled', isDisabled);
+  }
+
+  onChange: (value: string) => void; // init by this.registerOnChange
+  onTouched: () => void;
+
+  @ViewChild('editor')
+  editor : ElementRef<HTMLElement>;
 
   ngOnInit() {
-    this.myControl.setValue(`This is contenteditable text for reactive form`);
+  }
+
+  ngAfterViewInit(){
+  }
+
+  onKeyDown(event : KeyboardEvent) {
+    //console.log('event',event.key, event);
+    if(event.ctrlKey) {
+       if(!this.in(event.key, ['v','c','x','a','p', 'P','C','X','X','A'])) {
+        event.preventDefault();
+        event.stopPropagation();
+        return;
+       }
+    }
+  }
+
+  private in(vl : any, values : any[]) : boolean {
+    for(let val of values) {
+      if(vl === val) return true;
+    }
+    return false;
   }
 }

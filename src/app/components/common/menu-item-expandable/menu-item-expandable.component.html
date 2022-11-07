@@ -1,0 +1,8 @@
+<button mat-menu-item>
+  <div id="menu-item-container" (click)="isOpen = !isOpen; toggle($event)">
+    Expand it
+  </div>
+</button>
+<div id="sub-menu-container" *ngIf="isOpen">
+  Sub menu
+</div>

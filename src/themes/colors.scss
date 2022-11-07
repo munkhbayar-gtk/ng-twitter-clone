@@ -33,7 +33,7 @@
     background-color: getColor($color, primary, 500, 0.5) !important;
   }
   .primaryColorBg {
-    background-color: getColor($color, primary, 500, 0.1) !important;
+    background-color: getColor($color, primary, 500, 1) !important;
   }
   .primaryColorBgHover:hover {
     background-color: getColor($color, primary, 500, 0.1) !important;

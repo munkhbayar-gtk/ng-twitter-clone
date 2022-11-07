@@ -29,7 +29,10 @@ export class MatIconCustomModule {
       const m = `media-${media}`;
       this.addIcon(m, m);
     });
-    this.addIcon('plus', 'plus');
+    ['plus', 'globe', 'globe-outline','ppl-follow', 'email', 'check', 'twitter-circle']
+    .forEach(i=>{
+      this.addIcon(i, i);
+    });
   }
   private addIcon(name : string, file: string) {
     this.matIconRegistry.addSvgIcon(name, this.path(file));

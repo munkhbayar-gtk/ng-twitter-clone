@@ -52,4 +52,8 @@ export class SidenavComponent implements OnInit {
     this.selectedNavItem = item;
 
   }
+
+  moreClicked(event : Event, moreNavItem : SidenavLinkComponent) {
+
+  }
 }

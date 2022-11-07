@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { Component, OnInit } from '@angular/core';
 import { ScreenMonitorService } from './services/screen-monitor.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { ScreenMonitorService } from './services/screen-monitor.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'ng-twitter-clone';
 
   fontSizeLevel : string = '0';
@@ -15,11 +16,22 @@ export class AppComponent {
 
   get currentThemeName() : string {
     const items = this.currentTheme.split('-');
-    return items[1];
+    return [items[0], items[1]].join('-');
   }
 
-  constructor(public sz : ScreenMonitorService) {
+  constructor(public sz : ScreenMonitorService,
+    private overlayContainer : OverlayContainer) {
     //sz.setup();
+  }
+  ngOnInit(): void {
+    const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
+    const themeClassesToRemove = Array.from(overlayContainerClasses)
+    .filter((item: string) => item.startsWith('thm-'));
+    if (themeClassesToRemove.length) {
+      overlayContainerClasses.remove(...themeClassesToRemove);
+    }
+    overlayContainerClasses.add(this.currentTheme);
+    overlayContainerClasses.add(this.currentThemeName);
   }
 
   get windowWidth() : number {

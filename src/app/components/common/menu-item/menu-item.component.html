@@ -1,0 +1,23 @@
+<div id="mnu-item-container">
+  <button mat-menu-item class="primaryColorBgHover">
+    <div   style="display: flex; gap: 10px; width: 100%">
+      <div
+        id="icon-container" >
+        <div id="icon-background" [ngClass]="{'primaryColorBg':!iconBgColor}"
+          [ngStyle]="{'background-color':iconBgColor}"
+        ></div>
+        <mat-icon style="z-index: 10" [svgIcon]="svgIcon"></mat-icon>
+      </div>
+      <div style="display: flex; flex-basis: 100%;
+      flex-direction: column; justify-content: center;  flex-grow: 1;">
+        <div class="mat-body">{{title}}</div>
+        <span *ngIf="subTitle" class="mat-caption sub-text">{{subTitle}}</span>
+      </div>
+      <div
+        *ngIf="checked"
+        id="check-container">
+        <mat-icon svgIcon="check" class="primaryColor"></mat-icon>
+      </div>
+    </div>
+  </button>
+</div>

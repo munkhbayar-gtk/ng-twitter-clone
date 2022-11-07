@@ -1,16 +1,57 @@
 <div id="tweet-composer-container">
-  <img src="../../../../assets/avatar.jpg"  style="border-radius: 50%; width: 40px; height: 40px">
-  <div style="display: flex; flex-direction: column; flex-grow: 1">
-    <div>Everyone ></div>
-    <div id="tweet-text-editor">
-      <app-text-editable
-        #editor="ngModel"
-        [(ngModel)]="tweetText"
-        style="width: 100%; outline:none">{{tweetText}}></app-text-editable>
+  <img src="../../../../assets/avatar.jpg"
+  style="border-radius: 50%; border: 1px solid gray; width: 40px; height: 40px">
+  <div style="display: flex; flex-direction: column; flex-grow: 1; gap: 10px">
+    <div style="display: flex">
+      <div id="recv-container"
+      [matMenuTriggerFor]="recvSettings"
+      class="primaryColor mat-caption" style="font-weight: 550">
+        Everyone
+        <mat-icon>expand_more</mat-icon>
+      </div>
+      <mat-menu #recvSettings>
+        <div style="padding-left: 20px; padding-right: 20px; display: flex;
+        flex-direction: column; gap: 5px; margin-bottom: 15px;">
+          <h2 class="mat-h2" style="font-weight: 450;">Choose audience</h2>
+        </div>
+        <app-menu-item title="Everyone" svgIcon="globe" [checked]="true"></app-menu-item>
+        <app-menu-item title="People you follow" sub-title="2 People"
+        iconBgColor="rgb(0, 186, 124)"
+        svgIcon="twitter-circle"></app-menu-item>
+      </mat-menu>
     </div>
-    <div id="selected-files">selected images | single gif</div>
-    <div id="replay-settings">Everyone can reply</div>
+    <!-- {{editor.textValue}} -->
+    <div id="tweet-text-editor" style="min-height: 35px;">
+      <app-text-editable
+        #editor
+        style="width: 100%; outline:none"></app-text-editable>
+    </div>
 
+    <div *ngIf="selectedMedias.length > 0" id="selected-files">selected images | single gif</div>
+    <div style="display: flex">
+      <div id="replay-settings"
+        [matMenuTriggerFor]="replaySettingMenu"
+        aria-label="replay-settings"
+        class="primaryColorBgHover primaryColor" >
+        <mat-icon [svgIcon]="replySettingsMenuItems[selectedReplySettingMenuItemIndex].svgIcon"></mat-icon>
+        <span class="mat-caption">{{replySettingsMenuItems[selectedReplySettingMenuItemIndex].title}}</span>
+      </div>
+
+      <mat-menu #replaySettingMenu>
+        <div style="padding-left: 20px; padding-right: 20px; display: flex;
+        flex-direction: column; gap: 5px; margin-bottom: 15px;">
+          <h2 class="mat-caption" style="font-weight: 450;">Who can reply?</h2>
+          <div class="mat-caption sub-text">Choose who can reply to this Tweet.</div>
+          <div class="mat-caption sub-text">Anyone mentioned can always reply.</div>
+        </div>
+        <app-menu-item *ngFor="let menu of replySettingsMenuItems; let i = index"
+          [title]="menu.title"
+          [svgIcon]="menu.svgIcon"
+          [checked]="menu.checked"
+          (click)="repySettingMenuItemClicked(menu, i)"
+        ></app-menu-item>
+      </mat-menu>
+    </div>
     <div id="actions-container" class="primaryColor">
       <div style="display:flex;">
         <pri-circle-btn svgIcon="media-image" tooltip="Media"></pri-circle-btn>
@@ -21,16 +62,16 @@
         <pri-circle-btn svgIcon="media-location" tooltip="Location" [disabled]="true"></pri-circle-btn>
       </div>
       <div style="flex-grow: 1; display:flex; gap: 10px; justify-content: flex-end;align-items: center;">
-        <div style="display:flex; gap: 10px; align-items: center;">
+        <div *ngIf="editor.textValue" style="display:flex; gap: 10px; align-items: center;">
           <div style="display: flex; align-items: center; border-right: 1px solid gray;
           padding-top: 3px; padding-bottom: 3px; padding-right: 10px;">
-            <app-pri-circle-progress [value]="30" [hoverEffect]="false"></app-pri-circle-progress>
+            <app-pri-circle-progress [value]="calcPercentage(editor.textValue.length, 143)" [hoverEffect]="false"></app-pri-circle-progress>
           </div>
           <app-pri-circle-progress style="cursor:pointer" [svgIcon]="'plus'"></app-pri-circle-progress>
         </div>
         <button mat-raised-button
-        color="primary"
-        class="disabled"
+          color="primary"
+          [ngClass]="{'disabled': !editor.textValue}"
         style="border-radius: 999px;  height: 34px;">Tweet</button>
       </div>
     </div>

@@ -1,0 +1,8 @@
+p {
+  outline: none;
+}
+p[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #555;
+  font-size: 1.1rem;
+}

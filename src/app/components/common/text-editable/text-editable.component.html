@@ -1,3 +1,13 @@
-<div style="border: 2px solid white">
-<p editable="true" unformattedPaste [formControl]="myControl"></p>
+<div style="border: 0px solid white">
+  <p
+    #editor
+    name="myControl"
+    editable="true"
+    propValueAccessor="innerHTML"
+    [(ngModel)]="textValue"
+    (keydown)="onKeyDown($event)"
+  unformattedPaste
+  placeholder="What is happening?"
+  ></p>
 </div>
+

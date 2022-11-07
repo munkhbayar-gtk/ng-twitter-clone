@@ -8,14 +8,36 @@
 
   <nav style="display: flex; flex-direction: column;"
   [ngStyle]="{'gap': (windowHeight > 657 ? 10 : 0) + 'px'}">
-    <app-sidenav-link (onInit)="selectedNavItem=home" #home text="Home" icon="home" [active]="true"></app-sidenav-link>
+    <div style="position: relative">
+      <app-sidenav-link (onInit)="selectedNavItem=home" #home text="Home" icon="home" [active]="true"></app-sidenav-link>
+      <div id="dot"
+        *ngIf="home.active"
+        class="primaryColorBg"
+        style="position: absolute; top:8px; left:28px;  width: 6px; height: 6px; border-radius: 50%"></div>
+    </div>
     <app-sidenav-link text="Explore" icon="hashtag"></app-sidenav-link>
     <app-sidenav-link text="Notifications" icon="notif"></app-sidenav-link>
     <app-sidenav-link text="Messages" icon="message"></app-sidenav-link>
     <app-sidenav-link *ngIf="windowHeight > 573" text="Bookmarks" icon="bookmark" ></app-sidenav-link>
     <app-sidenav-link *ngIf="windowHeight > 573" text="Lists" icon="list" ></app-sidenav-link>
     <app-sidenav-link text="Profile" icon="profile" ></app-sidenav-link>
-    <app-sidenav-link text="More" icon="more"></app-sidenav-link>
+    <app-sidenav-link text="More" icon="more"
+      [matMenuTriggerFor]="moreMenu"
+    #more (click)="moreClicked($event, more)"></app-sidenav-link>
+
+    <mat-menu #moreMenu yPosition="above">
+      <button mat-menu-item>Topics</button>
+      <button mat-menu-item>Twitter circle</button>
+      <div *ngIf="windowHeight <= 573">
+        <button mat-menu-item>Bookmarks</button>
+        <button mat-menu-item>List</button>
+      </div>
+
+      <hr/>
+      <app-menu-item-expandable></app-menu-item-expandable>
+      <app-menu-item-expandable></app-menu-item-expandable>
+      <app-menu-item-expandable></app-menu-item-expandable>
+    </mat-menu>
   </nav>
   <div style="margin-top: 10px;">
     <button *ngIf="sz.on != 'md'" mat-raised-button color="primary"
@@ -28,7 +50,8 @@
   <div  style="display: flex; align-items: flex-end;  flex-grow: 1;width: 100%; ">
     <div class="hoverAnimation"
     style="display: flex; gap: 10px; padding: 11px; margin-bottom: 15px; align-items: center;width: 100%; ">
-      <img src="../../../../assets/avatar.jpg"  style="border-radius: 50%; width: 40px; height: 40px">
+      <img src="../../../../assets/avatar.jpg"
+      style="border-radius: 50%; border: 1px solid gray; width: 40px; height: 40px">
       <div *ngIf="sz.on != 'md'"
         style="display: flex; flex: 1 1 auto; align-items: center; flex-grow: 1;">
         <div style="display: flex; flex-direction: column; gap: 3px">

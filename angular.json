@@ -114,5 +114,7 @@
       }
     }
   },
-  "defaultProject": "ng-twitter-clone"
+  "cli": {
+    "analytics": false
+  }
 }

@@ -176,7 +176,7 @@ $thm-dim-teal-4 : merge($teal-color, $typo-4);
   @include mat.all-component-themes($thm-dim-teal-4);
 }
 
-.dim{
+.thm-dim{
   background-color: rgb(21, 32, 43) !important;
   scrollbar-color: rgb(92, 110, 126) rgb(30, 39, 50) !important;
   --sub-color: rgb(139, 152, 165);

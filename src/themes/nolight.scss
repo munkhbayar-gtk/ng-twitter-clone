@@ -5,14 +5,36 @@
 @import 'typographics.scss';
 
 @include mat.core();
+$bgColor: black;
+$fgColor: rgb(231, 233, 234);
 
+@function foreground($color) {
+  @return (
+    base:              $color,
+    divider:           green,
+    dividers:          gray,
+    disabled:          rgba($color, 0.38),
+    disabled-button:   rgba($color, 0.38),
+    disabled-text:     rgba($color, 0.38),
+    hint-text:         rgba($color, 0.38),
+    secondary-text:    rgba($color, 0.54),
+    icon:              rgba($color, 0.54),
+    icons:             rgba($color, 0.54),
+    text:              rgba($color, 0.87),
+    slider-min:        rgba($color, 0.87),
+    slider-off:        rgba($color, 0.26),
+    slider-off-active: rgba($color, 0.38),
+  );
+};
 @function merge($color, $typo) {
   $ret : mat.define-dark-theme((
     color: $color, typography: $typo
   ));
   //background-color: rgb(0, 0, 0)
   //color: rgb(231, 233, 234);
-  @return modifyColors($ret, rgb(231, 233, 234), black);
+  $ret-foreground: foreground($fgColor);
+  $ret : map-merge($ret, (foreground: $ret-foreground));
+  @return modifyColors($ret, $fgColor, $bgColor);
 }
 
 $thm-nolight-blue-0 : merge($blue-color, $typo-0);
@@ -183,7 +205,7 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
   @include mat.all-component-themes($thm-nolight-teal-4);
 }
 
-.nolight{
+.thm-nolight{
   //background-color: rgb(0, 0, 0) !important;
   scrollbar-color: rgb(92, 110, 126) rgb(30, 39, 50) !important;
   --sub-color: rgb(139, 152, 165);
@@ -205,6 +227,13 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
     background-color: rgba(48, 48, 48, 0.5);//rgba(0, 0, 0, 0.5);
   }
 
+  .mat-menu-panel {
+    color: $fgColor;
+    border-radius: 16px;
+    background-color: $bgColor !important;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15)
+    0px 0px 3px 1px !important;
+  }
 }
 
 
