@@ -1,4 +1,13 @@
-<div id="pri-circle-progress-container">
-  <div id="path-indicator"></div>
-  <div id="value-indicator"></div>
+<div id="pri-circle-progress-container" >
+  <div id="path-indicator" [ngStyle]="{'border' : (value === 0 ? '1' : '1')+'px solid gray'}">
+    <mat-icon [hidden]="!svgIcon" [svgIcon]="svgIcon"></mat-icon>
+  </div>
+  <div id="value-indicator" [ngClass]="hoverEffect?'primaryColorBgHover':''">
+    <mat-progress-spinner
+      mode="determinate"
+      strokeWidth="2"
+      diameter="22"
+      [value]="value">
+    </mat-progress-spinner>
+  </div>
 </div>

@@ -28,7 +28,8 @@ export class MatIconCustomModule {
     ['image','gif','poll','emoji','schedule','location'].forEach(media=>{
       const m = `media-${media}`;
       this.addIcon(m, m);
-    })
+    });
+    this.addIcon('plus', 'plus');
   }
   private addIcon(name : string, file: string) {
     this.matIconRegistry.addSvgIcon(name, this.path(file));

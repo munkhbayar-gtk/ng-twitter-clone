@@ -12,7 +12,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import {MatSliderModule} from '@angular/material/slider';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   exports: [
     MatIconModule,
@@ -21,7 +21,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatMenuModule,
     MatSidenavModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTooltipModule
   ],
 
   declarations: [

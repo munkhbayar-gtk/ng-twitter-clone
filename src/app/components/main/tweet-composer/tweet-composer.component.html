@@ -2,38 +2,36 @@
   <img src="../../../../assets/avatar.jpg"  style="border-radius: 50%; width: 40px; height: 40px">
   <div style="display: flex; flex-direction: column; flex-grow: 1">
     <div>Everyone ></div>
-    <div id="tweet-text-editor">Some tweet text here</div>
+    <div id="tweet-text-editor">
+      <app-text-editable
+        #editor="ngModel"
+        [(ngModel)]="tweetText"
+        style="width: 100%; outline:none">{{tweetText}}></app-text-editable>
+    </div>
     <div id="selected-files">selected images | single gif</div>
     <div id="replay-settings">Everyone can reply</div>
 
     <div id="actions-container" class="primaryColor">
       <div style="display:flex;">
-        <pri-circle-btn svgIcon="media-image"></pri-circle-btn>
-        <pri-circle-btn svgIcon="media-gif" ></pri-circle-btn>
-        <pri-circle-btn svgIcon="media-poll" ></pri-circle-btn>
-        <pri-circle-btn svgIcon="media-emoji" ></pri-circle-btn>
-        <pri-circle-btn svgIcon="media-schedule" ></pri-circle-btn>
-        <pri-circle-btn svgIcon="media-location" [disabled]="true"></pri-circle-btn>
+        <pri-circle-btn svgIcon="media-image" tooltip="Media"></pri-circle-btn>
+        <pri-circle-btn svgIcon="media-gif" tooltip="GIF"></pri-circle-btn>
+        <pri-circle-btn svgIcon="media-poll" tooltip="Poll"></pri-circle-btn>
+        <pri-circle-btn svgIcon="media-emoji" tooltip="Emoji"></pri-circle-btn>
+        <pri-circle-btn svgIcon="media-schedule" tooltip="Schedule"></pri-circle-btn>
+        <pri-circle-btn svgIcon="media-location" tooltip="Location" [disabled]="true"></pri-circle-btn>
       </div>
       <div style="flex-grow: 1; display:flex; gap: 10px; justify-content: flex-end;align-items: center;">
-        <div style="display: flex; align-items: center; border-right: 1px solid gray;
-        padding-top: 3px; padding-bottom: 3px; padding-right: 10px;">
-          <mat-progress-spinner
-            mode="determinate"
-            strokeWidth="2"
-            diameter="25"
-            [value]="50">
-          </mat-progress-spinner>
+        <div style="display:flex; gap: 10px; align-items: center;">
+          <div style="display: flex; align-items: center; border-right: 1px solid gray;
+          padding-top: 3px; padding-bottom: 3px; padding-right: 10px;">
+            <app-pri-circle-progress [value]="30" [hoverEffect]="false"></app-pri-circle-progress>
+          </div>
+          <app-pri-circle-progress style="cursor:pointer" [svgIcon]="'plus'"></app-pri-circle-progress>
         </div>
-        <mat-progress-spinner
-            mode="determinate"
-            strokeWidth="2"
-            diameter="25"
-            [value]="100">
-          </mat-progress-spinner>
-
-        <button mat-raised-button color="primary"
-    style="border-radius: 999px; opacity: 0.45; font-weight: 450; height: 34px;">Tweet</button>
+        <button mat-raised-button
+        color="primary"
+        class="disabled"
+        style="border-radius: 999px;  height: 34px;">Tweet</button>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TweetComposerComponent implements OnInit {
 
+  tweetText = "<span><i><strong>Hi Elon! how u doing?</strong></i></span>"
   constructor() { }
 
   ngOnInit(): void {

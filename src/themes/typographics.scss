@@ -16,7 +16,7 @@ $typo-0: mat.define-typography-config(
   $body-2: level(14px, 700, normal),
   $headline: level(22px, 400, normal),
   $title: level(18px, 400, normal),
-  $button: level(14px, 700, normal),
+  $button: level(14px, 400, normal),
   $caption: level(12px, 400, normal)
 );
 $typo-1: mat.define-typography-config(
@@ -25,7 +25,7 @@ $typo-1: mat.define-typography-config(
   $body-2: level(14px, 700, 19px),
   $headline: level(22px, 400, 19px),
   $title: level(19px, 400, 19px),
-  $button: level(14px, 700, 19px),
+  $button: level(14px, 400, 19px),
   $caption: level(12px, 400, 19px)
 );
 $typo-2: mat.define-typography-config(
@@ -34,7 +34,7 @@ $typo-2: mat.define-typography-config(
   $body-2: level(15px, 400, 20px),
   $headline: level(24px, 400, 20px),
   $title: level(20px, 400, 24px),
-  $button: level(15px, 700, 20px),
+  $button: level(15px, 400, 20px),
   $caption: level(13px, 400, 20px)
 );
 $typo-3: mat.define-typography-config(
@@ -43,7 +43,7 @@ $typo-3: mat.define-typography-config(
   $body-2: level(17px, 700, 20px),
   $headline: level(25px, 400, 26px),
   $title: level(22px, 400, 20px),
-  $button: level(17px, 700, 20px),
+  $button: level(17px, 400, 20px),
   $caption: level(14px, 400, 20px)
 );
 $typo-4: mat.define-typography-config(
@@ -52,6 +52,6 @@ $typo-4: mat.define-typography-config(
   $body-2: level(18px, 700, 29px),
   $headline: level(26px, 400, 29px), /*h1*/
   $title: level(24px, 400, 29px), /*h2*/
-  $button: level(20px, 700, 24px),
+  $button: level(20px, 400, 24px),
   $caption: level(16px, 400, 24px)
 );

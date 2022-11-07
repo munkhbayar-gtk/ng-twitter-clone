@@ -1,9 +1,10 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'pri-circle-btn',
   templateUrl: './primary-circle-button.component.html',
-  styleUrls: ['./primary-circle-button.component.scss']
+  styleUrls: ['./primary-circle-button.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PrimaryCircleButtonComponent implements OnInit {
 
@@ -15,6 +16,9 @@ export class PrimaryCircleButtonComponent implements OnInit {
 
   @Input('size')
   size = 'small';
+
+  @Input('tooltip')
+  tooltip = ''
 
   constructor() { }
 

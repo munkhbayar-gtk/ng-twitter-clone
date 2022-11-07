@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NgsContenteditableModule } from '@ng-stack/contenteditable';
+
 import { MaterialModule } from './material.module';
 import { SzDirective } from './directives/sz.directive';
 import { SidenavLinkComponent } from './components/sidenav/sidenav-link/sidenav-link.component';
@@ -16,6 +18,8 @@ import { TrendsComponent } from './components/main/trends/trends.component';
 import { FeedsComponent } from './components/main/feeds/feeds.component';
 import { TweetComposerComponent } from './components/main/tweet-composer/tweet-composer.component';
 import { PrimaryCircleButtonComponent } from './components/common/primary-circle-button/primary-circle-button.component';
+import { PriCircleProgressComponent } from './components/common/pri-circle-progress/pri-circle-progress.component';
+import { TextEditableComponent } from './components/common/text-editable/text-editable.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { PrimaryCircleButtonComponent } from './components/common/primary-circle
       TrendsComponent,
       FeedsComponent,
       TweetComposerComponent,
-      PrimaryCircleButtonComponent
+      PrimaryCircleButtonComponent,
+      PriCircleProgressComponent,
+      TextEditableComponent
   ],
   imports: [
     HttpClientModule,
@@ -35,6 +41,7 @@ import { PrimaryCircleButtonComponent } from './components/common/primary-circle
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgsContenteditableModule,
     BrowserAnimationsModule,
     MaterialModule,
     MatIconCustomModule

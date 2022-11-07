@@ -54,3 +54,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: flex-end;
   justify-items: flex-end;
 }
+
+button.disabled {
+  opacity: 0.45;
+}

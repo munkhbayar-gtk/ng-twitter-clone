@@ -1,3 +1,9 @@
-<mat-icon [svgIcon]="svgIcon"
+<mat-icon
+[matTooltip]="tooltip"
+[matTooltipShowDelay]="800"
+matTooltipClass="tooltipClass"
+
+[svgIcon]="svgIcon"
+[matTooltipDisabled]="disabled"
 class="p-circle-btn primaryColor"
 [ngClass]="[disabled?'primaryColorDisabled disabled' :'primaryColorBgHover', sizeClass(size)]"></mat-icon>

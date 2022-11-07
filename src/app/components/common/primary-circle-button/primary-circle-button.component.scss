@@ -1,6 +1,6 @@
 .sm {
-  width: 19px;
-  height: 19px;
+  max-width: 19px;
+  max-height: 19px;
   padding: 7px;
   border-radius: 50%;
   cursor: pointer;
@@ -15,4 +15,9 @@
 }
 .disabled {
   cursor: default !important;
+}
+
+.tooltipClass {
+  padding: 0;
+  margin: 0;
 }

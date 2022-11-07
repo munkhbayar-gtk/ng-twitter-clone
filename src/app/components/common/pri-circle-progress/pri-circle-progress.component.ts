@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-pri-circle-progress',
@@ -6,6 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pri-circle-progress.component.scss']
 })
 export class PriCircleProgressComponent implements OnInit {
+
+  @Input('value')
+  value = 0;
+
+  @Input('svgIcon')
+  svgIcon = '';
+
+  @Input('hoverEffect')
+  hoverEffect = true;
+
+  @Input('tooltip')
+  toolTip = ''
 
   constructor() { }
 
