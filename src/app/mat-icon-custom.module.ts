@@ -29,7 +29,10 @@ export class MatIconCustomModule {
       const m = `media-${media}`;
       this.addIcon(m, m);
     });
-    ['plus', 'globe', 'globe-outline','ppl-follow', 'email', 'check', 'twitter-circle']
+    [
+      'reply', 'retweet','like','share',
+      'plus', 'globe', 'globe-outline','ppl-follow', 'email',
+      'check', 'twitter-circle']
     .forEach(i=>{
       this.addIcon(i, i);
     });

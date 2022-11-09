@@ -95,6 +95,6 @@ $teal-color: (primary: $teal-primary, accent: $teal-accent, warn: $teal-warn);
 @function modifyColors($theme, $fg, $bg){
 
   $modifiedTheme : modifyColor($theme, background, $bg);
-  //$modifiedTheme : modifyColor($theme, foreground, $fg);
+  $modifiedTheme : modifyColor($modifiedTheme, foreground, $fg);
   @return $modifiedTheme;
 }

@@ -61,8 +61,9 @@
         <pri-circle-btn svgIcon="media-schedule" tooltip="Schedule"></pri-circle-btn>
         <pri-circle-btn svgIcon="media-location" tooltip="Location" [disabled]="true"></pri-circle-btn>
       </div>
+      {{editor.textValue}}
       <div style="flex-grow: 1; display:flex; gap: 10px; justify-content: flex-end;align-items: center;">
-        <div *ngIf="editor.textValue" style="display:flex; gap: 10px; align-items: center;">
+        <div *ngIf="editor.textValue && editor.textValue.length > 0" style="display:flex; gap: 10px; align-items: center;">
           <div style="display: flex; align-items: center; border-right: 1px solid gray;
           padding-top: 3px; padding-bottom: 3px; padding-right: 10px;">
             <app-pri-circle-progress [value]="calcPercentage(editor.textValue.length, 143)" [hoverEffect]="false"></app-pri-circle-progress>
@@ -71,7 +72,7 @@
         </div>
         <button mat-raised-button
           color="primary"
-          [ngClass]="{'disabled': !editor.textValue}"
+          [ngClass]="{'disabled': !editor.textValue || editor.textValue.length == 0}"
         style="border-radius: 999px;  height: 34px;">Tweet</button>
       </div>
     </div>

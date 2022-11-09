@@ -24,6 +24,8 @@ import { TextEditableComponent } from './components/common/text-editable/text-ed
 import { MenuItemComponent } from './components/common/menu-item/menu-item.component';
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MenuItemExpandableComponent } from './components/common/menu-item-expandable/menu-item-expandable.component';
+import { TweetComponent } from './components/main/tweet/tweet/tweet.component';
+import { TweetActionComponent } from './components/main/tweet/tweet-action/tweet-action.component';
 
 const globalRippleConfig = {
   disabled: true
@@ -43,7 +45,9 @@ const globalRippleConfig = {
       PriCircleProgressComponent,
       TextEditableComponent,
       MenuItemComponent,
-      MenuItemExpandableComponent
+      MenuItemExpandableComponent,
+      TweetComponent,
+      TweetActionComponent
   ],
   imports: [
     HttpClientModule,

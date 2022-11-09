@@ -14,8 +14,16 @@ import { UntypedFormControl, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@an
 export class TextEditableComponent implements OnInit, AfterViewInit,
   ControlValueAccessor {
 
-  textValue = '';
-
+  private _textValue = '';
+  get textValue() : string {
+    return this._textValue;
+  }
+  set textValue(vl : string) {
+    if(vl === '<br>' || vl == '<BR>'){
+      vl = '';
+    }
+    this._textValue = vl;
+  }
   writeValue(obj: any): void {
     //this.textValue = obj;
   }

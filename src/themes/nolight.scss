@@ -5,7 +5,7 @@
 @import 'typographics.scss';
 
 @include mat.core();
-$bgColor: black;
+$bgColor: rgb(0, 0, 0);
 $fgColor: rgb(231, 233, 234);
 
 @function foreground($color) {

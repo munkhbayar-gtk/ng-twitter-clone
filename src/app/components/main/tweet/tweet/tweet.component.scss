@@ -1,0 +1,25 @@
+
+#tweet-container {
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding: 11px;
+  gap: 11px;
+}
+#avatar-container {
+}
+#user-info-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+#tweet-body-container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#action-container{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
