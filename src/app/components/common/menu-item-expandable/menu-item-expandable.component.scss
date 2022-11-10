@@ -1,0 +1,30 @@
+
+#menu-item-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#parent-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  #menu-title {
+    flex-grow: 1;
+  }
+  mat-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease-in-out;
+  }
+  mat-icon.open {
+    transform: rotate(-180deg);
+  }
+
+  #arrow-container{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

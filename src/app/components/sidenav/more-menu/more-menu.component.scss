@@ -1,5 +1,7 @@
 #more-menu-container {
   border-radius: 0px;
+  max-height: calc(0px + 100vh);
+  overflow-y: auto;
 }
 .newHoverEffect:hover{
   border-radius: 0px !important;
@@ -10,7 +12,7 @@
   cursor: pointer;
 }
 .no-space {
-
+  padding: 0;
 }
 .text-normal {
   font-weight: 500;

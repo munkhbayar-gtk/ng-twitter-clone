@@ -1,8 +1,14 @@
-<button mat-menu-item>
-  <div id="menu-item-container" (click)="isOpen = !isOpen; toggle($event)">
-    Expand it
+<div id="menu-item-container">
+  <div id="parent-container" class="hoverRectAnimation" (click)="isOpen=!isOpen">
+    <span id="menu-title" class="mat-body">{{text}}</span>
+    <div id="arrow-container">
+      <mat-icon [ngClass]="isOpen? 'open primaryColor' : ''" svgIcon="expand-more"></mat-icon>
+    </div>
   </div>
-</button>
-<div id="sub-menu-container" *ngIf="isOpen">
-  Sub menu
+  <div id="subMenus" [hidden]="!isOpen">
+    <div id="sub-menus-container">
+      <ng-content select="app-sub-menu-item-expandable">
+      </ng-content>
+    </div>
+  </div>
 </div>

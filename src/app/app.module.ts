@@ -27,6 +27,8 @@ import { MenuItemExpandableComponent } from './components/common/menu-item-expan
 import { TweetComponent } from './components/main/tweet/tweet/tweet.component';
 import { TweetActionComponent } from './components/main/tweet/tweet-action/tweet-action.component';
 import { MoreMenuComponentDialog } from './components/sidenav/more-menu/more-menu.component';
+import { SubMenuItem } from './components/common/menu-item-expandable/sub/sub-menu-item';
+import { DisplayHelperDialogComponent } from './components/sidenav/more-menu/sub-menu-helpers/display-helper-dialog/display-helper-dialog.component';
 
 const globalRippleConfig = {
   disabled: true
@@ -47,9 +49,11 @@ const globalRippleConfig = {
       TextEditableComponent,
       MenuItemComponent,
       MenuItemExpandableComponent,
+      SubMenuItem,
       TweetComponent,
       TweetActionComponent,
       MoreMenuComponentDialog,
+      DisplayHelperDialogComponent,
   ],
   imports: [
     HttpClientModule,

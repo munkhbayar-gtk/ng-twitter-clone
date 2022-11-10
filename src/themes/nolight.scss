@@ -227,7 +227,13 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
     //background-color: blue;
     background-color: rgba(48, 48, 48, 0.5);//rgba(0, 0, 0, 0.5);
   }
-
+  .dimmed-background {
+    //data-testid='mask'
+    background-color: rgba(91, 112, 131, 0.4);
+  }
+  .mat-menu-panel-noshadow .mat-dialog-container {
+    box-shadow: none !important;
+  }
   .mat-menu-panel {
     color: $fgColor;
     border-radius: 16px;
@@ -239,8 +245,8 @@ $thm-nolight-teal-4 : merge($teal-color, $typo-4);
     padding: 0;
     border-radius: 4px;
     background-color: $bgColor !important;
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15)
-    0px 0px 3px 1px !important;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px !important;
+    overflow: hidden;
   }
 }
 

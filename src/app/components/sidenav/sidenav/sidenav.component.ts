@@ -1,8 +1,10 @@
 import { SidenavLinkComponent } from './../sidenav-link/sidenav-link.component';
-import { Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, SimpleChanges, ViewChildren } from '@angular/core';
 import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MoreMenuComponentDialog } from '../more-menu/more-menu.component';
+import { DisplayHelper } from '../more-menu/sub-menu-helpers/DisplayHelper';
+
 
 @Component({
   selector: 'app-sidenav',
@@ -23,7 +25,10 @@ export class SidenavComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onWindowSize(evt: Event) {
     //this.windowHeight = window.innerHeight;
-    console.log('onResize', this.windowHeight);
+    console.log('onResize', this.windowHeight, this.onWindowResized);
+    if(this.onWindowResized) {
+      this.onWindowResized();
+    }
   }
 
 
@@ -56,14 +61,74 @@ export class SidenavComponent implements OnInit {
 
   }
 
-  moreClicked(event : Event, moreNavItem : SidenavLinkComponent) {
+  ngOnChanges(changes: SimpleChanges){
+    console.log('changes', changes);
+  }
+  private onWindowResized: any;
+
+  private updateDialogPosition(el: HTMLElement, topChangeHeight : number) {
+    const rect =  el.getBoundingClientRect();
+    const top = this.windowHeight < topChangeHeight ? '0': `${rect.bottom - 230}px`;
+    const left = rect.left;//(rect.left + rect.width/2) - dialogWidth / 2;
+    //dialogRef.updatePosition({top: top, left: `${left}px`});
+    return [top, left, topChangeHeight];
+  }
+  moreClicked(event : Event, topChangeHeight : number, moreNavItem : SidenavLinkComponent) {
+    const dialogWidth = 320;
+    const rect = moreNavItem.htmlElement.nativeElement.getBoundingClientRect();
+    const top = this.windowHeight < topChangeHeight ? '0': `${rect.bottom - 230}px`;
+    const left = rect.left;//(rect.left + rect.width/2) - dialogWidth / 2;
+
+    const that = this;
+
     const dialogRef = this.dialog.open(MoreMenuComponentDialog, {
-      width: '250px',
+      width: `${dialogWidth}px`,
+      data: {
+        topChangeHeight: topChangeHeight,
+        onResize: function(onResizeCallback: any){
+          that.onWindowResized = function() {
+            const pos = this.updateDialogPosition(moreNavItem.htmlElement.nativeElement, topChangeHeight);
+            onResizeCallback(pos);
+          };
+        }
+      },
       position: {
-        top: '100px',
-        left: '100px'
+        top: top,
+        left: `${left}px`
       },
       panelClass: 'no-space'
+    });
+    dialogRef.afterClosed().subscribe((resultTag)=>{
+      this.onWindowResized = null;
+      console.log('dialog-closed-with', resultTag);
+      this.onMoreSubMenuItemSelected(resultTag);
     })
+    /*
+    setTimeout(()=>{
+      dialogRef.updatePosition({top:'0', left: `${left}px`});
+    }, 5000);
+    */
+  }
+
+  private onMoreSubMenuItemSelected(menuTag: string) {
+    const action = this.moreSubMenuItemsActions[menuTag];
+    if(action){
+      action();
+    }else{
+      console.log('no-action', menuTag);
+    }
+  }
+
+  private onDisplayMenuClicked = ()=>{
+    const helper = new DisplayHelper(this.dialog);
+    helper.show();
+  }
+
+  private moreSubMenuItemsActions : MoreSubMenuActionType = {
+    "display": this.onDisplayMenuClicked
   }
 }
+type MoreSubMenuActionType={
+  [key: string] : any
+}
+

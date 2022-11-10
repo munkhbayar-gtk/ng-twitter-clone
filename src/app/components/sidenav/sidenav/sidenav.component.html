@@ -22,7 +22,7 @@
     <app-sidenav-link *ngIf="windowHeight > 573" text="Lists" icon="list" ></app-sidenav-link>
     <app-sidenav-link text="Profile" icon="profile" ></app-sidenav-link>
     <app-sidenav-link text="More" icon="more"
-    #more (click)="moreClicked($event, more)"></app-sidenav-link>
+    #more (click)="moreClicked($event, 573, more)"></app-sidenav-link>
   </nav>
   <div style="margin-top: 10px;">
     <button *ngIf="sz.on != 'md'" mat-raised-button color="primary"

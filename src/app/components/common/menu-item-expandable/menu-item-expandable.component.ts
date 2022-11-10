@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-item-expandable',
@@ -7,15 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuItemExpandableComponent implements OnInit {
 
+  @Input('text')
+  text : string = '';
+
   isOpen = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  toggle() {
+  }
+  /*
   toggle(event: Event) {
     event.preventDefault();
     event.stopPropagation();
   }
+  */
 }
+
+
+

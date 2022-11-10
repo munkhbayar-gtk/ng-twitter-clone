@@ -32,7 +32,11 @@ export class MatIconCustomModule {
     [
       'reply', 'retweet','like','share',
       'plus', 'globe', 'globe-outline','ppl-follow', 'email',
-      'check']
+      'check', 'expand-more',
+
+      'ads-twitter', 'analytic', 'display', 'help', 'keyboard-shortcut',
+      'moment', 'moneytize', 'newsletter', 'pro-twitter', 'setting'
+    ]
     .forEach(i=>{
       this.addIcon(i, i);
     });

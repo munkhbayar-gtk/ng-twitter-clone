@@ -1,4 +1,4 @@
-<div id="more-menu-container" class="mat-app-background">
+<div id="more-menu-container">
   <app-sidenav-link hoverEffect="hoverRectAnimation" normalClass="text-normal"
   text="Topics" icon="topic"></app-sidenav-link>
   <div *ngIf="windowHeight <= 573">
@@ -6,5 +6,24 @@
     <app-sidenav-link hoverEffect="hoverRectAnimation" normalClass="text-normal"  text="Lists" icon="list" ></app-sidenav-link>
   </div>
   <app-sidenav-link hoverEffect="hoverRectAnimation" normalClass="text-normal"  text="Twitter Circle" icon="twitter-circle" ></app-sidenav-link>
-
+  <hr>
+  <div style="display:flex; flex-direction: column; margin-right: 20px;">
+    <app-menu-item-expandable #mnu1 text="Creator Studio">
+      <app-sub-menu-item-expandable text="Moments" svgIcon="moment" (click)="close('moment')"></app-sub-menu-item-expandable>
+      <app-sub-menu-item-expandable text="Newsletters" svgIcon="newsletter" (click)="close('newsletter')"></app-sub-menu-item-expandable>
+      <app-sub-menu-item-expandable text="Analytics" svgIcon="analytic" (click)="close('analytic')"></app-sub-menu-item-expandable>
+    </app-menu-item-expandable>
+    <app-menu-item-expandable #mnu2 text="Professional Tools">
+      <app-sub-menu-item-expandable text="Twitter for Professionals" svgIcon="pro-twitter" (click)="close('pro-twitter')"></app-sub-menu-item-expandable>
+      <app-sub-menu-item-expandable text="Twitter Ads" svgIcon="ads-twitter" (click)="close('ads-twitter')"></app-sub-menu-item-expandable>
+      <app-sub-menu-item-expandable text="Monetization" svgIcon="moneytize" (click)="close('moneytize')"></app-sub-menu-item-expandable>
+    </app-menu-item-expandable>
+    <app-menu-item-expandable #mnu3 text="Settings and Support">
+      <app-sub-menu-item-expandable text="Settings and privacy" svgIcon="setting" (click)="close('setting')"></app-sub-menu-item-expandable>
+      <app-sub-menu-item-expandable text="Help Center" svgIcon="help" (click)="close('help')"></app-sub-menu-item-expandable>
+      <app-sub-menu-item-expandable text="Display" svgIcon="display" (click)="close('display')"></app-sub-menu-item-expandable>
+      <app-sub-menu-item-expandable text="Keyboard shortcuts" svgIcon="keyboard-shortcut" (click)="close('keyboard-shortcut')"></app-sub-menu-item-expandable>
+    </app-menu-item-expandable>
+    <span [hidden]="true">{{onMenuStatChanged([mnu1,mnu2,mnu3])}}</span>
+  </div>
 </div>
