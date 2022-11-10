@@ -18,6 +18,14 @@ export class SidenavLinkComponent implements OnInit {
   @Input('icon')
   icon : string = '';
 
+  @Input('hoverEffect')
+  hoverEffect = 'hoverAnimation';
+
+  @Input('activeClass')
+  activeClass = 'text-active';
+  @Input('normalClass')
+  normalClass = 'text';
+
   @Output('onSelected')
   onSelected = new EventEmitter<void>();
   constructor(public sz : ScreenMonitorService, public htmlElement: ElementRef<HTMLElement>) { }

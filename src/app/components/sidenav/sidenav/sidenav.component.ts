@@ -1,6 +1,8 @@
 import { SidenavLinkComponent } from './../sidenav-link/sidenav-link.component';
 import { Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MoreMenuComponentDialog } from '../more-menu/more-menu.component';
 
 @Component({
   selector: 'app-sidenav',
@@ -25,7 +27,8 @@ export class SidenavComponent implements OnInit {
   }
 
 
-  constructor(public sz : ScreenMonitorService, private renderer: Renderer2) { }
+  constructor(public sz : ScreenMonitorService, private renderer: Renderer2,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -54,6 +57,13 @@ export class SidenavComponent implements OnInit {
   }
 
   moreClicked(event : Event, moreNavItem : SidenavLinkComponent) {
-
+    const dialogRef = this.dialog.open(MoreMenuComponentDialog, {
+      width: '250px',
+      position: {
+        top: '100px',
+        left: '100px'
+      },
+      panelClass: 'no-space'
+    })
   }
 }

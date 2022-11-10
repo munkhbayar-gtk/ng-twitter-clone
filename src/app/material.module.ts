@@ -13,6 +13,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   exports: [
     MatIconModule,
@@ -22,7 +23,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatSidenavModule,
     MatTabsModule,
     MatProgressSpinnerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatIconModule,
+    MatDialogModule
   ],
 
   declarations: [

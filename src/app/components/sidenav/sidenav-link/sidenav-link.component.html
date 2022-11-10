@@ -1,13 +1,13 @@
 <div (click)="this.active = true; onSelected.emit()"
   style="display: flex; "
   classNames="md:just-center md:md-w">
-  <div class="hoverAnimation"
+  <div class="{{hoverEffect}}"
     id="sidenav-link-container"
     classNames="md:no-r-p !md:r-p"
     >
     <mat-icon [svgIcon]="icon+(!active?'-outline':'')"></mat-icon>
     <span *ngIf="sz.on != 'md'"
-    class="mat-h2"
-      [ngStyle]="{'font-weight' : active?500:200}">{{text}}</span>
+      class="mat-h2"
+      [ngClass]="active? activeClass: normalClass" >{{text}}</span>
   </div>
 </div>

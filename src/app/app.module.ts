@@ -26,6 +26,7 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MenuItemExpandableComponent } from './components/common/menu-item-expandable/menu-item-expandable.component';
 import { TweetComponent } from './components/main/tweet/tweet/tweet.component';
 import { TweetActionComponent } from './components/main/tweet/tweet-action/tweet-action.component';
+import { MoreMenuComponentDialog } from './components/sidenav/more-menu/more-menu.component';
 
 const globalRippleConfig = {
   disabled: true
@@ -47,7 +48,8 @@ const globalRippleConfig = {
       MenuItemComponent,
       MenuItemExpandableComponent,
       TweetComponent,
-      TweetActionComponent
+      TweetActionComponent,
+      MoreMenuComponentDialog,
   ],
   imports: [
     HttpClientModule,

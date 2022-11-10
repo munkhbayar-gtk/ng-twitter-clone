@@ -22,22 +22,7 @@
     <app-sidenav-link *ngIf="windowHeight > 573" text="Lists" icon="list" ></app-sidenav-link>
     <app-sidenav-link text="Profile" icon="profile" ></app-sidenav-link>
     <app-sidenav-link text="More" icon="more"
-      [matMenuTriggerFor]="moreMenu"
     #more (click)="moreClicked($event, more)"></app-sidenav-link>
-
-    <mat-menu #moreMenu yPosition="above">
-      <button mat-menu-item>Topics</button>
-      <button mat-menu-item>Twitter circle</button>
-      <div *ngIf="windowHeight <= 573">
-        <button mat-menu-item>Bookmarks</button>
-        <button mat-menu-item>List</button>
-      </div>
-
-      <hr/>
-      <app-menu-item-expandable></app-menu-item-expandable>
-      <app-menu-item-expandable></app-menu-item-expandable>
-      <app-menu-item-expandable></app-menu-item-expandable>
-    </mat-menu>
   </nav>
   <div style="margin-top: 10px;">
     <button *ngIf="sz.on != 'md'" mat-raised-button color="primary"

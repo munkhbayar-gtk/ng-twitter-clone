@@ -37,6 +37,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   cursor: pointer;
 }
 
+.hoverRectAnimation{
+  padding: 10px;
+  transition: 200ms ease-out;
+  border-radius: 0px;
+  transition-property: background-color, box-shadow;
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }

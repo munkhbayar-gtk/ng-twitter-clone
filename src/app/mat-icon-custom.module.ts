@@ -19,7 +19,7 @@ export class MatIconCustomModule {
   private addIcons() : void{
     this.addIcon('twitter', 'twitter');
     this.addIcon('feather', 'feather');
-    ['bookmark', 'hashtag', 'home', 'list','bookmark', 'message','more','notif','profile']
+    ['bookmark', 'hashtag', 'home', 'list','bookmark', 'message','more','notif','profile','twitter-circle', 'topic']
     .forEach(svg=>{
       this.addIcon(svg, svg);
       this.addIcon(`${svg}-outline`,`${svg}-outline`);
@@ -32,7 +32,7 @@ export class MatIconCustomModule {
     [
       'reply', 'retweet','like','share',
       'plus', 'globe', 'globe-outline','ppl-follow', 'email',
-      'check', 'twitter-circle']
+      'check']
     .forEach(i=>{
       this.addIcon(i, i);
     });
