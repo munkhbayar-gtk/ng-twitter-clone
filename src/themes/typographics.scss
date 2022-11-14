@@ -55,3 +55,11 @@ $typo-4: mat.define-typography-config(
   $button: level(20px, 400, 24px),
   $caption: level(16px, 400, 24px)
 );
+
+$typos: (
+  0: $typo-0,
+  1: $typo-1,
+  2: $typo-2,
+  3: $typo-3,
+  4: $typo-4
+);

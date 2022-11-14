@@ -29,6 +29,9 @@ import { TweetActionComponent } from './components/main/tweet/tweet-action/tweet
 import { MoreMenuComponentDialog } from './components/sidenav/more-menu/more-menu.component';
 import { SubMenuItem } from './components/common/menu-item-expandable/sub/sub-menu-item';
 import { DisplayHelperDialogComponent } from './components/sidenav/more-menu/sub-menu-helpers/display-helper-dialog/display-helper-dialog.component';
+import { ColoredCircleCheckboxComponent } from './components/common/colored-circle-checkbox/colored-circle-checkbox.component';
+import { ColoredCircleComponent } from './components/common/colored-circle/colored-circle.component';
+import { ColoredRoundedBoxComponent } from './components/common/colored-rounded-box/colored-rounded-box.component';
 
 const globalRippleConfig = {
   disabled: true
@@ -54,6 +57,9 @@ const globalRippleConfig = {
       TweetActionComponent,
       MoreMenuComponentDialog,
       DisplayHelperDialogComponent,
+      ColoredCircleCheckboxComponent,
+      ColoredCircleComponent,
+      ColoredRoundedBoxComponent,
   ],
   imports: [
     HttpClientModule,

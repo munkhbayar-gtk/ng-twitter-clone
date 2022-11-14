@@ -7,10 +7,14 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
   }
   section {
     display:flex;
     flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 #dialog-actions{
@@ -21,5 +25,136 @@
 .customer-dialog-container .mat-dialog-container {
   border-radius: 16px;
   box-shadow: none !important;
+}
+
+#color-chooser-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-radius: 15px;
+}
+#fz-chooser{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 15px;
+}
+#fz-chooser-container{
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+
+
+  #fz-tracks-container {
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #fz-track-container{
+    position: absolute;
+    display: flex;
+    width: 100%;
+  }
+
+  #fz-active-tracker {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    z-index: 1;
+  }
+
+  #fz-active-tracker-container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .fz-track-active-on {
+    background-color: green;
+    width: 100%;
+  }
+
+  .fz-track-active {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  #fz-track {
+    height: 4px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 999px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #fz-seletors-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between
+  }
+  app-colored-circle {
+    z-index: 2;
+  }
+
+
+}
+
+#bg-chooser-container{
+  padding: 5px 15px 5px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  .bgBox-active {
+    border-width: 2px !important;
+  }
+  .bgBox-inactive{
+    border-width: 1px !important;
+  }
+  .bgBox{
+
+    height: 60px;
+    flex-grow: 1;
+    flex-basis: 33%;
+
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    span {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+  }
+  .bgBox-dim {
+    border: 1px solid #333639;
+  }
+  .bgBox-default {
+    border: 1px solid #333639;
+  }
+  .bgBox-nolight {
+    border: 1px solid #425364;
+  }
 }
 

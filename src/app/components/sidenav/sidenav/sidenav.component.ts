@@ -1,3 +1,4 @@
+import { ThemeService } from 'src/app/services/theme.service';
 import { SidenavLinkComponent } from './../sidenav-link/sidenav-link.component';
 import { Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, SimpleChanges, ViewChildren } from '@angular/core';
 import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
@@ -32,7 +33,10 @@ export class SidenavComponent implements OnInit {
   }
 
 
-  constructor(public sz : ScreenMonitorService, private renderer: Renderer2,
+  constructor(
+    public theme: ThemeService,
+    public sz : ScreenMonitorService,
+    private renderer: Renderer2,
     private dialog: MatDialog) { }
 
   ngOnInit() {

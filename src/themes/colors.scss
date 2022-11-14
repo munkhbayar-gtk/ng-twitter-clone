@@ -35,16 +35,24 @@
   .primaryColorBg {
     background-color: getColor($color, primary, 500, 1) !important;
   }
+  .primaryColorBgCustom {
+    background-color: getColor($color, primary, 200, 1) !important;
+  }
   .primaryColorBgHover:hover {
     background-color: getColor($color, primary, 500, 0.1) !important;
+  }
+  .primaryColorBgHover2:hover {
+    background-color: getColor($color, primary, 500, 0.2) !important;
+  }
+
+  .primaryColorBorder {
+    border: solid getPrimary($color) !important;
   }
 }
 $blue-primary : mat.define-palette(mat.$blue-palette);
 $blue-accent : mat.define-palette(mat.$blue-palette);
 $blue-warn: mat.define-palette(mat.$blue-palette);
 $blue-color: (primary: $blue-primary, accent: $blue-accent, warn: $blue-warn);
-
-
 
 $yellow-primary : mat.define-palette(mat.$yellow-palette);
 $yellow-accent : mat.define-palette(mat.$yellow-palette);
@@ -59,6 +67,7 @@ $pink-color: (primary: $pink-primary, accent: $pink-accent, warn: $pink-warn);
 $deep-purple-primary : mat.define-palette(mat.$deep-purple-palette);
 $deep-purple-accent : mat.define-palette(mat.$deep-purple-palette);
 $deep-purple-warn: mat.define-palette(mat.$deep-purple-palette);
+
 $deep-purple-color: (primary: $deep-purple-primary, accent: $deep-purple-accent, warn: $deep-purple-warn);
 
 $deep-orange-primary : mat.define-palette(mat.$deep-orange-palette);
@@ -71,7 +80,14 @@ $teal-accent : mat.define-palette(mat.$teal-palette);
 $teal-warn: mat.define-palette(mat.$teal-palette);
 $teal-color: (primary: $teal-primary, accent: $teal-accent, warn: $teal-warn);
 
-
+$colors: (
+  blue: $blue-color,
+  yellow: $yellow-color,
+  pink: $pink-color,
+  deep-purple: $deep-purple-color,
+  deep-orange: $deep-orange-color,
+  teal: $teal-color
+);
 /* setting background, foreground colors to the themes*/
 //https://eatmorecarrots.medium.com/changing-the-background-color-in-an-angular-material-theme-90d29f864759
 @function modifyColor($theme, $dest, $color) {
@@ -97,4 +113,28 @@ $teal-color: (primary: $teal-primary, accent: $teal-accent, warn: $teal-warn);
   $modifiedTheme : modifyColor($theme, background, $bg);
   $modifiedTheme : modifyColor($modifiedTheme, foreground, $fg);
   @return $modifiedTheme;
+}
+
+.thm-primary-blue {
+  background-color: getColor($blue-color, primary, 500, 1) !important;
+}
+
+.thm-primary-yellow {
+  background-color: getColor($yellow-color, primary, 500, 1) !important;
+}
+
+.thm-primary-pink {
+  background-color: getColor($pink-color, primary, 500, 1) !important;
+}
+
+.thm-primary-deep-purple {
+  background-color: getColor($deep-purple-color, primary, 500, 1) !important;
+}
+
+.thm-primary-deep-orange {
+  background-color: getColor($deep-orange-color, primary, 500, 1) !important;
+}
+
+.thm-primary-teal {
+  background-color: getColor($teal-color, primary, 500, 1) !important;
 }

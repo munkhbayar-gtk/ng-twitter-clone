@@ -6,15 +6,65 @@
     </header>
     <section>
       <span class="mat-caption sub-text">Font size</span>
-      <div></div>
+      <div id="fz-chooser" class="bg2">
+        <span class="mat-caption">Aa</span>
+        <div id="fz-chooser-container" >
+          <div id="fz-tracks-container">
+            <div id="fz-track-container">
+              <div id="fz-track" class="primaryColorBgCustom"></div>
+              <!--  -->
+            </div>
+            <div id="fz-active-tracker">
+              <div id="fz-active-tracker-container">
+                <div id="fz-track-section-{{sz}}"
+                  class="{{sz < theme.currentTypographyIndex ? 'primaryColorBg fz-track-active-on' : 'fz-track-active'}}"
+                  *ngFor="let sz of [0,1,2,3]"></div>
+              </div>
+            </div>
+          </div>
+          <div id="fz-seletors-container">
+            <app-colored-circle
+              *ngFor="let sz of [0,1,2,3,4]"
+              [active]="sz <= theme.currentTypographyIndex"
+              (click)="theme.changeTypographyIndex(sz)"
+              ></app-colored-circle>
+          </div>
+        </div>
+        <span class="mat-h1" style="margin:0">Aa</span>
+      </div>
     </section>
     <section>
       <span class="mat-caption sub-text">Color</span>
-      <div></div>
+      <div id="color-chooser-container" class="bg2">
+        <app-colored-circle-checkbox
+          *ngFor="let color of theme.colors"
+          [color]="color"
+          [active]="theme.currentColor === color"
+          (click)="theme.changeColor(color)"
+        >
+        </app-colored-circle-checkbox>
+      </div>
     </section>
     <section>
       <span class="mat-caption sub-text">Background</span>
-      <div></div>
+      <div id="bg-chooser-container" class="bg2">
+        <div *ngFor="let box of theme.list();"
+        (click)="theme.changeTheme(box.name)"
+          [ngClass]="[
+            theme.getThemeBy(box.name,theme.currentColor, theme.currentTypographyIndex),
+            (theme.currentThemeShortName === box.name?'primaryColorBorder bgBox-active':'bgBox-inactive'),
+            'bgBox-'+box.name
+            ].join(' ')"
+          class="thm-{{box.name}} bgBox "
+          >
+          <app-colored-circle-checkbox
+            #check
+            style="scale: 0.5;"
+
+           [active]="theme.currentThemeShortName === box.name" [color]="theme.currentColor"></app-colored-circle-checkbox>
+          <span class="mat-body">{{box.title}}</span>
+        </div>
+      </div>
     </section>
   </mat-dialog-content>
   <mat-dialog-actions align="center">

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, SimpleChanges } from '@angular/core';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-display-helper-dialog',
@@ -8,9 +9,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class DisplayHelperDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(public theme : ThemeService) { }
 
   ngOnInit(): void {
+  }
+
+  selectedFontSizeIndex = 0;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('dh-changes', changes);
   }
 
 }

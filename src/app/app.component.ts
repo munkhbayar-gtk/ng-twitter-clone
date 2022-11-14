@@ -1,6 +1,7 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ScreenMonitorService } from './services/screen-monitor.service';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -12,28 +13,30 @@ export class AppComponent implements OnInit{
 
   fontSizeLevel : string = '0';
 
-  currentTheme : string = 'thm-nolight-blue-0';
 
-  get currentThemeName() : string {
-    const items = this.currentTheme.split('-');
-    return [items[0], items[1]].join('-');
-  }
 
   constructor(public sz : ScreenMonitorService,
+    public theme : ThemeService,
     private overlayContainer : OverlayContainer) {
     //sz.setup();
   }
   ngOnInit(): void {
+   this.onThemeChange();
+   this.theme.themeObserver.subscribe((theme)=>{
+    this.onThemeChange();
+   })
+  }
+
+  private onThemeChange() {
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
     const themeClassesToRemove = Array.from(overlayContainerClasses)
     .filter((item: string) => item.startsWith('thm-'));
     if (themeClassesToRemove.length) {
       overlayContainerClasses.remove(...themeClassesToRemove);
     }
-    overlayContainerClasses.add(this.currentTheme);
-    overlayContainerClasses.add(this.currentThemeName);
+    overlayContainerClasses.add(this.theme.currentThemeClass);
+    overlayContainerClasses.add(this.theme.currentThemeName);
   }
-
   get windowWidth() : number {
     return window.innerWidth;
   }

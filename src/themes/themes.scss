@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+@use 'mixin.scss' as mix;
+mat.$theme-ignore-duplication-warnings: true;
+@include mat.core();
+
+$nolight : (
+  name: 'nolight',
+  dark: true,
+  fgColor: rgb(231, 233, 234),
+  bgColor: rgb(0, 0, 0),
+  bg2Color: rgb(22, 24, 28),
+  hoverBg: rgb(22, 24, 28),
+  dim: rgba(91, 112, 131, 0.4)
+);
+
+@include mix.create($nolight);
+
+$dim : (
+  name: 'dim',
+  dark: true,
+  fgColor: rgb(231, 233, 234),
+  bgColor: rgb(21, 32, 43),
+  bg2Color: rgb(30, 39, 50),
+  hoverBg: rgb(30, 39, 50),
+  dim: rgba(91, 112, 131, 0.4)
+);
+
+@include mix.create($dim);
+$bgColorDefault: rgb(255, 255, 255);
+$fgColorDefault: #212121; //rgb(33,33,33)
+
+$default : (
+  name: 'default',
+  dark: false,
+  fgColor: #212121,
+  bgColor: rgb(255, 255, 255),
+  bg2Color: rgb(247, 249, 249),
+  hoverBg: rgb(38, 39, 50),
+  dim: rgba(0, 0, 0, 0.4),
+  blue-bird: true
+);
+@include mix.create($default);
+
+
+

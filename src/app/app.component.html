@@ -1,4 +1,4 @@
-<div  [ngClass]="[currentThemeName, currentTheme, 'after-theme-applied'].join(' ')"
+<div  [ngClass]="[theme.currentThemeClass, theme.currentThemeName, 'after-theme-applied'].join(' ')"
 style="height: 100%" class="mat-app-background">
   <mat-sidenav-container style="height: 100%">
     <mat-sidenav *ngIf="sz.on == 'sm'" mode="over" opened>

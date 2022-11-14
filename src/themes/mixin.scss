@@ -1,28 +1,137 @@
 //@use 'sass:map';
 @use '@angular/material' as mat;
+@import 'colors.scss';
+@import 'typographics.scss';
 
-@mixin color($theme) {
-  $color-config : mat.get-color-config($theme);
-  $pr: map-get($color-config, 'primary');
-  $ac: map-get($color-config, 'accent');
-  $wr: map-get($color-config, 'warn');
+@function createTheme($dark, $color, $typo){
+  @if $dark == true {
+    @return mat.define-dark-theme((
+      color: $color, typography: $typo
+    ));
+  }
+  @return mat.define-light-theme((
+    color: $color, typography: $typo
+  ));
+}
 
-  .primary {
-    color: mat.get-color-from-palette($pr, '500');
+@function foreground($color) {
+  @return (
+    base:              $color,
+    divider:           green,
+    dividers:          gray,
+    disabled:          rgba($color, 0.38),
+    disabled-button:   rgba($color, 0.38),
+    disabled-text:     rgba($color, 0.38),
+    hint-text:         rgba($color, 0.38),
+    secondary-text:    rgba($color, 0.54),
+    icon:              rgba($color, 0.54),
+    icons:             rgba($color, 0.54),
+    text:              rgba($color, 0.87),
+    slider-min:        rgba($color, 0.87),
+    slider-off:        rgba($color, 0.26),
+    slider-off-active: rgba($color, 0.38),
+  );
+};
+
+@function merge($dark, $color, $typo, $fgColor, $bgColor) {
+  $ret : createTheme($dark, $color, $typo);
+  $ret-foreground: foreground($fgColor);
+  $ret : map-merge($ret, (foreground: $ret-foreground));
+  @return modifyColors($ret, $fgColor, $bgColor);
+}
+
+@mixin theme($theme, $color, $typo) {
+  @include mat.core($typo);
+  @include mat.all-component-themes($theme);
+  //@include mix.color($thm-nolight-blue-0);
+  @include color-list($color);
+}
+
+
+@mixin create($theme) {
+  //$nm, $dark, $fgColor, $bgColor
+  $nm : map-get($theme, name);
+  $dark : map-get($theme, dark);
+  $fgColor : map-get($theme, fgColor);
+  $bgColor : map-get($theme, bgColor);
+
+  @each $colName, $color in $colors {
+    @each $typeIndex, $typo in $typos {
+      $theme-name: ".thm-#{$nm}-#{$colName}-#{$typeIndex}";
+      @debug "theme: #{$theme-name}";
+      #{$theme-name} {
+        $base-theme: merge($dark, $color, $typo, $fgColor, $bgColor);
+        @include theme($base-theme, $color, $typo);
+      }
+    }
+  };
+
+  $tw: false;
+
+  @if map-has-key($theme, 'blue-bird') {
+    $tw: map-get($theme, 'blue-bird');
   }
-  .accent {
-    color: mat.get-color-from-palette($ac, '500');
+  @debug "NM: #{$nm} #{$tw}";
+  @if $tw == true {
+    .blue-bird-#{$nm}{
+      color: getColor($blue-color, primary, 500, 1) !important
+    }
+  }@else {
+    .blue-bird-#{$nm} {
+      color: $fgColor !important;
+    }
   }
-  .warn {
-    color: mat.get-color-from-palette($wr, '500');
+
+  .bgBox-#{$nm} {
+    background-color: $bgColor;
+    color: $fgColor !important;
   }
-  .primary-bg {
-    background-color: mat.get-color-from-palette($pr, '500');;
-  }
-  .primary-ac {
-    background-color: mat.get-color-from-palette($ac, '500');;
-  }
-  .primary-wr {
-    background-color: mat.get-color-from-palette($wr, '500');;
+
+  .thm-#{$nm}{
+    //background-color: rgb(21, 32, 43) !important;
+    scrollbar-color: rgb(92, 110, 126) rgb(30, 39, 50) !important;
+    --sub-color: rgb(139, 152, 165);
+    .sub-text {
+      color: rgb(139, 152, 165);
+    }
+    .bg2 {
+      background-color: map-get($theme, 'bg2Color');
+    }
+    .mat-body,
+    .mat-body-2,
+    .mat-caption,
+    .mat-h3,
+    .mat-h2{
+      margin: 0 0 0 0 !important;
+    }
+
+    .hoverAnimation:hover,
+    .hoverRectAnimation:hover {
+      //#303030
+      //background-color: blue;
+      background-color: map-get($theme, hoverBg);//rgba(0, 0, 0, 0.5);
+    }
+    .dimmed-background {
+      //data-testid='mask'
+      background-color: map-get($theme, dim);
+    }
+    .mat-menu-panel-noshadow .mat-dialog-container {
+      box-shadow: none !important;
+    }
+    .mat-menu-panel {
+      color: $fgColor;
+      border-radius: 16px;
+      background-color: $bgColor !important;
+      box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15)
+      0px 0px 3px 1px !important;
+    }
+    .mat-dialog-container {
+      padding: 0;
+      border-radius: 4px;
+      background-color: $bgColor !important;
+      box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px !important;
+      overflow: hidden;
+    }
   }
 }
+
