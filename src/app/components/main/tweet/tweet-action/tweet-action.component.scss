@@ -18,6 +18,9 @@
     transition: background-color 0.2s ease-in-out 100ms;
   }
 }
+#tweet-action-container.active {
+  color: var(--hoverColor);
+}
 #tweet-action-container:hover{
   color: var(--hoverColor);
 

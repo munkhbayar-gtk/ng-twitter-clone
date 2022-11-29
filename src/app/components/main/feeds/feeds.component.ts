@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Tweet } from './../../../data/data';
+import { ApiTweetService } from './../../../services/api/api-tweet.service';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
 
 @Component({
@@ -6,8 +8,12 @@ import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
   templateUrl: './feeds.component.html',
   styleUrls: ['./feeds.component.scss']
 })
-export class FeedsComponent implements OnInit {
+export class FeedsComponent implements OnInit, AfterViewInit {
 
+  private _tweets : Tweet[];
+  get tweets() : Tweet[]{
+    return this._tweets;
+  }
   get width() : number{
     switch(this.sz.on) {
       case 'sm' : return 300;
@@ -17,10 +23,16 @@ export class FeedsComponent implements OnInit {
     }
   }
 
-  constructor(public sz : ScreenMonitorService) { }
+  constructor(public sz : ScreenMonitorService, private api : ApiTweetService) { }
+  ngAfterViewInit(): void {
+    this.api.list().subscribe(data =>{
+      this._tweets = data;
+    })
+  }
 
   ngOnInit(): void {
   }
+
 
 
 }

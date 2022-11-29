@@ -30,12 +30,13 @@ export class MatIconCustomModule {
       this.addIcon(m, m);
     });
     [
-      'reply', 'retweet','like','share',
+      'reply', 'retweet','like','share', 'liked',
       'plus', 'globe', 'globe-outline','ppl-follow', 'email',
       'check', 'expand-more',
 
       'ads-twitter', 'analytic', 'display', 'help', 'keyboard-shortcut',
-      'moment', 'moneytize', 'newsletter', 'pro-twitter', 'setting'
+      'moment', 'moneytize', 'newsletter', 'pro-twitter', 'setting',
+      'retweet', 'quote', 'more-horiz', 'notif-plus'
     ]
     .forEach(i=>{
       this.addIcon(i, i);

@@ -1,7 +1,8 @@
 <div id="feeds-container" style="height: 100vh;">
   <h1 class="mat-h2" style="padding-left: 13px">Home</h1>
   <app-tweet-composer></app-tweet-composer>
-  <app-tweet></app-tweet>
-  <app-tweet></app-tweet>
-  <app-tweet></app-tweet>
+  <app-tweet
+    *ngFor="let tweet of tweets"
+    [tweet]="tweet"
+  ></app-tweet>
 </div>

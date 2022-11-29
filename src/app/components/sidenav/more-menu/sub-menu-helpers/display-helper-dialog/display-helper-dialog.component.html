@@ -60,8 +60,9 @@
           <app-colored-circle-checkbox
             #check
             style="scale: 0.5;"
-
-           [active]="theme.currentThemeShortName === box.name" [color]="theme.currentColor"></app-colored-circle-checkbox>
+            [unchecked-state]="{'bgClass': 'bgBox-'+box.name, 'bg':'transparent'}"
+            [active]="theme.currentThemeShortName === box.name"
+            [color]="theme.currentColor"></app-colored-circle-checkbox>
           <span class="mat-body">{{box.title}}</span>
         </div>
       </div>

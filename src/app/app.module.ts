@@ -32,6 +32,9 @@ import { DisplayHelperDialogComponent } from './components/sidenav/more-menu/sub
 import { ColoredCircleCheckboxComponent } from './components/common/colored-circle-checkbox/colored-circle-checkbox.component';
 import { ColoredCircleComponent } from './components/common/colored-circle/colored-circle.component';
 import { ColoredRoundedBoxComponent } from './components/common/colored-rounded-box/colored-rounded-box.component';
+import { ProfileComponent } from './components/main/profile/profile.component';
+import { DoubleLinedTextComponent } from './components/common/double-lined-text/double-lined-text.component';
+import { CircleIconButtonComponent } from './components/common/circle-icon-button/circle-icon-button.component';
 
 const globalRippleConfig = {
   disabled: true
@@ -60,6 +63,9 @@ const globalRippleConfig = {
       ColoredCircleCheckboxComponent,
       ColoredCircleComponent,
       ColoredRoundedBoxComponent,
+      ProfileComponent,
+      DoubleLinedTextComponent,
+      CircleIconButtonComponent,
   ],
   imports: [
     HttpClientModule,

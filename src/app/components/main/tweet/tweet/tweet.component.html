@@ -1,10 +1,12 @@
 <div id="tweet-container">
   <div id="avatar-container">
-    <img src="../../../../assets/avatar.jpg"
+    <a [routerLink]="tweet.twitter.uid" #avatarImage>
+      <img src="../../../../assets/avatar.jpg"
       style="border-radius: 50%; border: 1px solid gray; width: 40px; height: 40px">
+    </a>
   </div>
   <div id="tweet-body-container">
-    <div id="user-info-container">
+    <div id="user-info-container" (click)="avatarImage.click()">
       <span class="mat-body">Munkhbayar-Gtk</span>
       <span class="mat-caption sub-text">@munkhbayar-gtk · 19h</span>
     </div>
@@ -12,10 +14,26 @@
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aut placeat doloribus temporibus ipsam quidem voluptate incidunt reprehenderit fuga, cumque, enim non ipsum fugiat libero accusamus suscipit ex veritatis rerum.
     </div>
     <div id="action-container">
-      <app-tweet-action svgIcon="reply" hoverColor="#1d9bf0" (click)="replyClick()"></app-tweet-action>
-      <app-tweet-action svgIcon="retweet" hoverColor="#00ba7c" (click)="retweetClick()"></app-tweet-action>
-      <app-tweet-action svgIcon="like" hoverColor="#f91880" (click)="likeClick()"></app-tweet-action>
-      <app-tweet-action svgIcon="share" hoverColor="#1d9bf0" (click)="shareClick()"></app-tweet-action>
+      <app-tweet-action [counter]="tweet.reply_count" svgIcon="reply" hoverColor="#1d9bf0" (click)="replyClick()"></app-tweet-action>
+      <app-tweet-action [counter]="tweet.retweet_count" svgIcon="retweet"
+        hoverColor="#00ba7c" [matMenuTriggerFor]="mnuRetweet"></app-tweet-action>
+      <app-tweet-action [counter]="tweet.like_count"
+        [svgIcon]="tweet.liked ? 'liked' : 'like'"
+        hoverColor="#f91880"
+        [active]="tweet.liked"
+        (click)="likeClick()"></app-tweet-action>
+      <app-tweet-action [counter]="-1" svgIcon="share" hoverColor="#1d9bf0" (click)="shareClick()"></app-tweet-action>
+
+      <mat-menu #mnuRetweet yPosition="below" xPosition="before">
+        <button mat-menu-item>
+          <mat-icon svgIcon="retweet"></mat-icon>
+          <span>Retweet</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon svgIcon="quote"></mat-icon>
+          <span>Quote tweet</span>
+        </button>
+      </mat-menu>
     </div>
   </div>
 </div>

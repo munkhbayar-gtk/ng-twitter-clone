@@ -1,3 +1,4 @@
-<div id="color-checkbox-container" [ngClass]="'thm-primary-'+color">
+<div id="color-checkbox-container"
+  [ngClass]="active || uncheckState.bg === 'fill' ? 'thm-primary-'+color : 'transparent-bg ' + uncheckState.bgClass">
   <mat-icon svgIcon="check" *ngIf="active"></mat-icon>
 </div>

@@ -16,6 +16,9 @@ export class TweetActionComponent implements OnInit {
   @Input('counter')
   counter: number = 12;
 
+  @Input('active')
+  active = false;
+
   constructor(private el : ElementRef<HTMLElement>) { }
 
   ngOnInit(): void {

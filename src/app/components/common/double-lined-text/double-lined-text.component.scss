@@ -1,0 +1,9 @@
+#lines-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  span {
+    margin: 0px;
+  }
+}
