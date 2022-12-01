@@ -1,5 +1,8 @@
-<div  [ngClass]="[theme.currentThemeClass, theme.currentThemeName, 'after-theme-applied'].join(' ')"
+<div
+
+[ngClass]="[theme.currentThemeClass, theme.currentThemeName, 'after-theme-applied'].join(' ')"
 style="height: 100%" class="mat-app-background">
+
   <mat-sidenav-container style="height: 100%">
     <mat-sidenav *ngIf="sz.on == 'sm'" mode="over" opened>
       Left Nav on Mobile
@@ -11,8 +14,8 @@ style="height: 100%" class="mat-app-background">
              >
             <app-sidenav></app-sidenav>
         </header>
-        <main role="main" style=" flex-grow: 1;">
-          <div classNames="flex">
+        <main role="main" style=" flex-grow: 1;" class="divider-border">
+          <div classNames="flex" >
             <div id="router-contianer" style="max-width: 600px; " [ngStyle]="{'width' : calc(windowWidth) + 'px'}">
               <router-outlet></router-outlet>
             </div>
@@ -22,3 +25,9 @@ style="height: 100%" class="mat-app-background">
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+  <div id="theme-css-variables"
+  ngInit
+  (ngInit)="theme.init()"
+  [ngClass]="theme.currentThemeShortName + '-color-list color-list'"></div>
+</div>

@@ -40,11 +40,11 @@
   @return modifyColors($ret, $fgColor, $bgColor);
 }
 
-@mixin theme($theme, $color, $typo) {
+@mixin theme($theme, $color, $typo, $themeConfig) {
   @include mat.core($typo);
   @include mat.all-component-themes($theme);
   //@include mix.color($thm-nolight-blue-0);
-  @include color-list($color);
+  @include color-list($color, $themeConfig);
 }
 
 
@@ -61,7 +61,7 @@
       @debug "theme: #{$theme-name}";
       #{$theme-name} {
         $base-theme: merge($dark, $color, $typo, $fgColor, $bgColor);
-        @include theme($base-theme, $color, $typo);
+        @include theme($base-theme, $color, $typo, $theme);
       }
     }
   };

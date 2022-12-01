@@ -17,11 +17,27 @@
   @return getColor($palette, primary, 500, null);
 }
 
-@mixin color-list($color) {
-  .color-list {
-    --primary-color: getPrimary($color);
-    --accent-color: getAccent($color);
-    --warn-color: getWarn($color);
+@mixin color-list($color, $themeConfig) {
+  $primary: getPrimary($color);
+  $accent: getAccent($color);
+  $warn: getWarn($color);
+
+  //@debug 'primary:' $primary;
+  //@debug "primary: #{$primary}";
+
+  .#{map-get($themeConfig, 'name')}-color-list {
+
+    --primary-color: #{$primary};
+    --accent-color: #{$accent};
+    --warn-color: #{$warn};
+
+    @each $key, $value in $themeConfig {
+      --#{$key}: #{$value};
+    }
+  }
+
+  .primary-text-decoration {
+    text-decoration-color: getPrimary($color);
   }
   .primaryColor {
     color: getPrimary($color) !important;
@@ -46,7 +62,19 @@
   }
 
   .primaryColorBorder {
-    border: solid getPrimary($color) !important;
+    border: solid getPrimary($color);
+  }
+  .bgColorBoder {
+    border: solid map-get($themeConfig, 'bgColor');
+  }
+  .bg2 {
+    background-color: map-get($themeConfig, 'bg2Color') !important;
+  }
+  .divider-border {
+    border: solid map-get($themeConfig, 'dividerColor');
+  }
+  .divider-border-bottom {
+    border-bottom: 1px solid map-get($themeConfig, 'dividerColor');
   }
 }
 $blue-primary : mat.define-palette(mat.$blue-palette);

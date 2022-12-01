@@ -3,11 +3,15 @@
     <mat-icon class="hoverAnimation">arrow_back</mat-icon>
     <app-double-lined-text [title]="'title-text'" [sub-title]="'9,900 Tweets'"></app-double-lined-text>
   </div>
-  <div id="profile-images-container">
-    <div id="profile-banner-image-container"></div>
+  <div id="profile-images-container"
+  >
+    <div id="profile-banner-image-container"
+      class="bg2"
+    ></div>
     <div id="profile-image-container">
       <img src="../../../../assets/avatar.jpg"
-      style="border-radius: 50%; border: 3px solid gray; width: 120px; height: 120px">
+      class="bgColorBoder"
+      style="border-radius: 50%; width: 120px; height: 120px">
 
       <div style="flex-grow: 1;"> </div>
       <div id="btns-container">
@@ -16,15 +20,49 @@
         <app-circle-icon-button svgIcon="notif-plus"></app-circle-icon-button>
 
         <div
-          style="display: flex; align-items: center; padding: 0 0px 0 0px; border: 1px solid gray; border-radius: 999px;">
-          <span class="mat-button">Following</span>
+          #btnFlw
+          id="btn-un-or-follow"
+          (mouseover)="btnFlw.setAttribute('over', 'on')"
+          (mouseout)="btnFlw.setAttribute('over', 'off')"
+          >
+          <span class="mat-button">
+            {{btnFlw.getAttribute('over') === 'on' ? 'Unfollow' : 'Following'}}
+          </span>
         </div>
       </div>
     </div>
   </div>
-  <div id="profile-info-container">
+  <div id="profile-info-container" style="padding-left: 15px">
     <app-double-lined-text [title]="'Munkhbayar-gtk'" [sub-title]="'@mbr-gtk'"></app-double-lined-text>
-    Profile names,Bio, location & joined date, following and followers count
+    <div id="bio-text">
+      BioBio BioBio BioBio BioBio
+    </div>
+
+    <div style="display: flex; gap: 15px">
+      <app-icon-text svgIcon="loc-pin" text="Ulaanbaatar"></app-icon-text>
+      <app-icon-text svgIcon="calendar" text="Joined February 2013"></app-icon-text>
+    </div>
+    <div style="display: flex; gap: 15px" id="flw-container">
+      <app-num-frmt number="1000" text="Following"></app-num-frmt>
+      <app-num-frmt number="385" text="Followers"></app-num-frmt>
+    </div>
   </div>
-  <div id="activities-container"></div>
+  <div id="activities-container"
+    style="min-height: 500px; margin-top: 15px"
+  >
+    <div
+      #tabs
+      ngInit
+      (ngInit)="tabs.setAttribute('selected-tab', '0')"
+      id="tabs-container"
+      style="min-height: 50px; "
+      class="divider-border-bottom"
+      >
+      <app-tab
+        *ngFor="let tab of ['Tweets','Tweets & replies','Media',' Likes ']; let i = index"
+        (click)="tabs.setAttribute('selected-tab', '' + i)"
+        [active]="tabs.getAttribute('selected-tab') === (i + '')"
+        [title]="tab"></app-tab>
+    </div>
+  </div>
 </div>

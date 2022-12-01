@@ -35,6 +35,10 @@ import { ColoredRoundedBoxComponent } from './components/common/colored-rounded-
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { DoubleLinedTextComponent } from './components/common/double-lined-text/double-lined-text.component';
 import { CircleIconButtonComponent } from './components/common/circle-icon-button/circle-icon-button.component';
+import { TabComponent, TabsComponent } from './components/common/tab/tab.component';
+import { InitDirective } from './directives/init.directive';
+import { IconTextComponent } from './components/common/icon-text/icon-text.component';
+import { NumFrmtComponent } from './components/common/num-frmt/num-frmt.component';
 
 const globalRippleConfig = {
   disabled: true
@@ -47,6 +51,8 @@ const globalRippleConfig = {
     SidenavLinkComponent,
 
     SzDirective,
+    InitDirective,
+
       TrendsComponent,
       FeedsComponent,
       TweetComposerComponent,
@@ -66,6 +72,10 @@ const globalRippleConfig = {
       ProfileComponent,
       DoubleLinedTextComponent,
       CircleIconButtonComponent,
+      TabComponent,
+      TabsComponent,
+      IconTextComponent,
+      NumFrmtComponent,
   ],
   imports: [
     HttpClientModule,

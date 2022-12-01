@@ -14,11 +14,43 @@ export class ThemeService {
   }
   */
 
+  /*
+  $nolight : (
+      primary-color
+      name: 'nolight',
+      dark: true,
+      fgColor: rgb(231, 233, 234),
+      bgColor: rgb(0, 0, 0),
+      bg2Color: rgb(22, 24, 28),
+      hoverBg: rgb(22, 24, 28),
+      dim: rgba(91, 112, 131, 0.4)
+    );
+  */
+
+  private CSS_VARS = {
+      'primary-color':'',
+      'accent-color':'',
+      'warn-color':'',
+      name: 'nolight',
+      dark: true,
+      fgColor: '',
+      bgColor: '',
+      bg2Color: '',
+      hoverBg: '',
+      dim: ''
+  }
+
   private themeMonitorSubject = new Subject<string>();
   themeObserver = this.themeMonitorSubject.asObservable();
 
   private currentTheme : string = 'thm-dim-blue-0';
-  constructor() { }
+  constructor() {
+   }
+
+  init(): void {
+    console.log('theme-service-init');
+    this.onChange();
+  }
 
   get currentThemeClass () : string {
     return this.currentTheme;
@@ -75,6 +107,18 @@ export class ThemeService {
   }
   private onChange() {
     console.log('new-theme', this.currentTheme);
+
+    //change theme variables
+    const varsDiv = document.getElementById('theme-css-variables')!!;
+    const computedStyles = window.getComputedStyle(varsDiv);
+    console.log('computedStyles', computedStyles.getPropertyValue('--primary-color'));
+
+    for(let style in this.CSS_VARS) {
+      const _var = `--${style}`;
+      const _val = computedStyles.getPropertyValue(_var);
+      console.log(style, _val);
+      document.body.style.setProperty(_var, _val);
+    }
     this.themeMonitorSubject.next(this.currentTheme);
   }
 

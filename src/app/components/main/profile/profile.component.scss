@@ -1,19 +1,29 @@
+
+$header-height: 54px;
+
+#profile-container {
+  position: relative;
+  padding-top: $header-height;
+}
 #profile-header {
+  width: 100%;
+  //background-color: rgba($color: green, $alpha: 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   gap: 20px;
-  min-height: 54px;
+  min-height: $header-height;
   align-items: center;
   mat-icon {
     scale: 0.75;
   }
 }
 
-/*
 #profile-images-container {
 }
-*/
 #profile-banner-image-container{
-  background-color: gray;
   min-height: 180px;
 }
 #profile-image-container{
@@ -26,6 +36,26 @@
     display: flex;
     gap: 8px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+    #btn-un-or-follow:hover {
+      padding: 0 0px 0 0px;
+      border: 1px solid red;
+      color: red;
+      background-color: rgba($color: red, $alpha: 0.1);
+    }
+    #btn-un-or-follow {
+      padding: 0 0px 0 0px;
+      border: 1px solid gray;
+      border-radius: 999px;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      span {
+        font-weight: 600;
+      }
+    }
   }
 }
 #profile-info-container {
@@ -33,4 +63,20 @@
   display: flex;
   gap: 15px;
   flex-direction: column;
+}
+#flw-container{
+  app-num-frmt {
+    cursor: pointer;
+  }
+  app-num-frmt:hover {
+    text-decoration: underline;
+  }
+}
+#tabs-container {
+  display: flex;
+  justify-content: space-around;
+
+  app-tab {
+    flex-grow: 1;
+  }
 }

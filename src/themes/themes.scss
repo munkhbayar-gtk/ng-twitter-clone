@@ -10,7 +10,8 @@ $nolight : (
   bgColor: rgb(0, 0, 0),
   bg2Color: rgb(22, 24, 28),
   hoverBg: rgb(22, 24, 28),
-  dim: rgba(91, 112, 131, 0.4)
+  dim: rgba(91, 112, 131, 0.4),
+  dividerColor: rgb(56, 68, 77),
 );
 
 @include mix.create($nolight);
@@ -21,8 +22,9 @@ $dim : (
   fgColor: rgb(231, 233, 234),
   bgColor: rgb(21, 32, 43),
   bg2Color: rgb(30, 39, 50),
-  hoverBg: rgb(30, 39, 50),
-  dim: rgba(91, 112, 131, 0.4)
+  hoverBg: rgb(44, 54, 64),
+  dim: rgba(91, 112, 131, 0.4),
+  dividerColor: rgb(56, 68, 77),
 );
 
 @include mix.create($dim);
@@ -35,9 +37,10 @@ $default : (
   fgColor: #212121,
   bgColor: rgb(255, 255, 255),
   bg2Color: rgb(247, 249, 249),
-  hoverBg: rgb(38, 39, 50),
+  hoverBg: rgb(231, 231, 232),
   dim: rgba(0, 0, 0, 0.4),
-  blue-bird: true
+  blue-bird: true,
+  dividerColor: rgb(56, 68, 77),
 );
 @include mix.create($default);
 

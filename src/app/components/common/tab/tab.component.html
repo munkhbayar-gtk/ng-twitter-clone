@@ -1,0 +1,15 @@
+
+<div id="tab-container"
+class="hoverRectAnimation"
+>
+  <div
+  style="display: flex; flex-direction: column;  height: 100%">
+    <div
+      id="tab-text"
+      class="mat-button"
+      [ngClass]="!active?'sub-text':''"
+  >{{title}}</div>
+    <div id="bottom-border" [ngClass]="active ? 'primaryColorBorder' : 'normal-border'"></div>
+  </div>
+
+</div>

@@ -36,7 +36,7 @@ export class MatIconCustomModule {
 
       'ads-twitter', 'analytic', 'display', 'help', 'keyboard-shortcut',
       'moment', 'moneytize', 'newsletter', 'pro-twitter', 'setting',
-      'retweet', 'quote', 'more-horiz', 'notif-plus'
+      'retweet', 'quote', 'more-horiz', 'notif-plus', 'loc-pin','calendar'
     ]
     .forEach(i=>{
       this.addIcon(i, i);

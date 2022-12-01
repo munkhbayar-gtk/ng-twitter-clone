@@ -1,0 +1,38 @@
+$indicator-tickness: 4px;
+:root{
+  height: 100%;
+}
+#tab-container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  height: 100%;
+  #tab-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  /*
+  .active #bottom-border{
+    height: #{$indicator-tickness};
+    background-color: var(--primary-color);
+    width: auto;
+    border-radius: 999px;;
+  }
+  */
+  #bottom-border{
+    width: auto;
+    border-radius: 999px;
+    border-width: 2px !important;
+  }
+  .normal-border {
+    border: 2px solid transparent;
+  }
+}
+
+
+

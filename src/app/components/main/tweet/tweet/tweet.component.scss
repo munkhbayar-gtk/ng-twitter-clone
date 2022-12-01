@@ -1,11 +1,9 @@
 
 #tweet-container {
   display: flex;
-  border-bottom: 1px solid gray;
+  border-width: 0px 0px 1px 0px !important;
   padding: 11px;
   gap: 11px;
-
-
 }
 ::ng-deep {
   .mat-menu-panel {
