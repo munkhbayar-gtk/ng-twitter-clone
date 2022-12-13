@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, SimpleChanges } from '@angular/core';
+import { UnCheckedState } from 'src/app/components/common/colored-circle-checkbox/colored-circle-checkbox.component';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -9,6 +10,9 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class DisplayHelperDialogComponent implements OnInit {
 
+  getUncheckState() {
+
+  }
   constructor(public theme : ThemeService) { }
 
   ngOnInit(): void {

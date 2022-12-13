@@ -1,16 +1,28 @@
 <div id="tweet-container" class="divider-border-bottom">
   <div id="avatar-container">
-    <a [routerLink]="tweet.twitter.uid" #avatarImage>
+    <a
+      (mouseover)="overProfileEvent.emit()"
+      (mouseout)="outProfileEvent.emit()"
+      [routerLink]="tweet.twitter.uid" #avatarImage>
       <img src="../../../../assets/avatar.jpg"
       style="border-radius: 50%; border: 1px solid gray;
       width: 40px; height: 40px">
     </a>
   </div>
   <div id="tweet-body-container">
-    <div id="user-info-container" (click)="avatarImage.click()">
-      <span class="mat-body">Munkhbayar-Gtk</span>
-      <span class="mat-caption sub-text">@munkhbayar-gtk · 19h</span>
+    <div id="user-info-container"
+    (click)="avatarImage.click()">
+      <span class="mat-body"
+        (mouseover)="overProfileEvent.emit()"
+        (mouseout)="outProfileEvent.emit()"
+      >Munkhbayar-Gtk</span>
+      <span
+        (mouseover)="overProfileEvent.emit()"
+        (mouseout)="outProfileEvent.emit()"
+
+      class="mat-caption sub-text">@munkhbayar-gtk · 19h</span>
     </div>
+
     <div id="tweet-body" class="mat-body">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aut placeat doloribus temporibus ipsam quidem voluptate incidunt reprehenderit fuga, cumque, enim non ipsum fugiat libero accusamus suscipit ex veritatis rerum.
     </div>
@@ -37,4 +49,5 @@
       </mat-menu>
     </div>
   </div>
+
 </div>

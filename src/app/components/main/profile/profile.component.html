@@ -1,6 +1,8 @@
 <div id="profile-container">
   <div id="profile-header">
-    <mat-icon class="hoverAnimation">arrow_back</mat-icon>
+    <span routerLink="..">
+      <mat-icon class="hoverAnimation">arrow_back</mat-icon>
+    </span>
     <app-double-lined-text [title]="'title-text'" [sub-title]="'9,900 Tweets'"></app-double-lined-text>
   </div>
   <div id="profile-images-container"
@@ -43,8 +45,8 @@
       <app-icon-text svgIcon="calendar" text="Joined February 2013"></app-icon-text>
     </div>
     <div style="display: flex; gap: 15px" id="flw-container">
-      <app-num-frmt number="1000" text="Following"></app-num-frmt>
-      <app-num-frmt number="385" text="Followers"></app-num-frmt>
+      <app-num-frmt [number]="1000" text="Following"></app-num-frmt>
+      <app-num-frmt [number]="385" text="Followers"></app-num-frmt>
     </div>
   </div>
   <div id="activities-container"

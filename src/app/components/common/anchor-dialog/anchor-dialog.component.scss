@@ -1,0 +1,13 @@
+#anchor-dialog-container {
+  position : relative;
+}
+
+#dialog-panel {
+  top: 0;
+  background-color: green;
+  position: fixed;
+  display: none;
+  width: 100px;
+  height: 100px;
+  z-index: 100000;
+}

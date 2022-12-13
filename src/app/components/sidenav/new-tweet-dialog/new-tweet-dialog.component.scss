@@ -1,0 +1,20 @@
+.mat-dialog-container-custom {
+  border-radius: 16px !important;
+  box-shadow: none !important;
+}
+
+#closer {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5px;
+
+  mat-icon {
+    font-size: 20px;
+  }
+}
+

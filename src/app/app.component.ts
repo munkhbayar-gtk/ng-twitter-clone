@@ -13,8 +13,6 @@ export class AppComponent implements OnInit{
 
   fontSizeLevel : string = '0';
 
-
-
   constructor(public sz : ScreenMonitorService,
     public theme : ThemeService,
     private overlayContainer : OverlayContainer) {

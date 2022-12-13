@@ -4,5 +4,12 @@
   <app-tweet
     *ngFor="let tweet of tweets"
     [tweet]="tweet"
+    (profile-out)="log('out'); closeTooltipDialog(tweet)"
+    (profile-over)="log('over'); openTooltipDialog(tweet)"
   ></app-tweet>
+  <!--
+  -->
+  <!--
+    Dialog on hover
+  -->
 </div>

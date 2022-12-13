@@ -1,10 +1,13 @@
 import { ThemeService } from 'src/app/services/theme.service';
 import { SidenavLinkComponent } from './../sidenav-link/sidenav-link.component';
-import { Component, ElementRef, HostListener, OnInit, QueryList, Renderer2, SimpleChanges, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, QueryList, Renderer2,
+  SimpleChanges, ViewChildren } from '@angular/core';
 import { ScreenMonitorService } from 'src/app/services/screen-monitor.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MoreMenuComponentDialog } from '../more-menu/more-menu.component';
 import { DisplayHelper } from '../more-menu/sub-menu-helpers/DisplayHelper';
+import { TweetComposerComponent } from '../../main/tweet-composer/tweet-composer.component';
+import { NewTweetDialogComponent } from '../new-tweet-dialog/new-tweet-dialog.component';
 
 
 @Component({
@@ -130,6 +133,42 @@ export class SidenavComponent implements OnInit {
 
   private moreSubMenuItemsActions : MoreSubMenuActionType = {
     "display": this.onDisplayMenuClicked
+  }
+
+  openNewTweetDialog() {
+    console.log('new dialog requested');
+    const dialogRef = this.dialog.open(NewTweetDialogComponent,
+      {
+        width: `600px`,
+        position: {
+          top: `20px`
+        },
+        //panelClass: 'mat-container',
+        backdropClass: 'dimmed-background',
+        panelClass: 'customer-dialog-container',
+      });
+      dialogRef.afterClosed().subscribe(result=>{
+
+      });
+    /*
+    const dialogRef = this.dialog.open(TweetComposerComponent, {
+      width: `${dialogWidth}px`,
+      data: {
+        topChangeHeight: topChangeHeight,
+        onResize: function(onResizeCallback: any){
+          that.onWindowResized = function() {
+            const pos = this.updateDialogPosition(moreNavItem.htmlElement.nativeElement, topChangeHeight);
+            onResizeCallback(pos);
+          };
+        }
+      }
+      ,
+      position: {
+        top: top,
+        left: `${left}px`
+      },
+      panelClass: 'no-space'
+      */
   }
 }
 type MoreSubMenuActionType={

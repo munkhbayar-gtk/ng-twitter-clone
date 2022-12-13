@@ -5,13 +5,16 @@ import { ProfileComponent } from './components/main/profile/profile.component';
 
 const routes: Routes = [
   {
-    path:'home',
-    component: FeedsComponent
-  },
+    path: 'home',
+    loadChildren: () => import('./lazy-modules/feeds.module')
+      .then(m => m.FeedsModule)
+    },
   {
     path: '',
-    component: FeedsComponent
+    loadChildren: () => import('./lazy-modules/feeds.module')
+      .then(m => m.FeedsModule)
   },
+  //{ path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule) },
   {
     path: '**',
     component: ProfileComponent

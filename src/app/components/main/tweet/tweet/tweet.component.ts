@@ -1,5 +1,5 @@
 import { Tweet } from './../../../../data/data';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tweet',
@@ -11,7 +11,13 @@ export class TweetComponent implements OnInit {
   @Input('tweet')
   tweet : Tweet;
 
-  constructor() { }
+  @Output('profile-over')
+  overProfileEvent = new EventEmitter<void>();
+
+  @Output('profile-out')
+  outProfileEvent = new EventEmitter<void>();
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

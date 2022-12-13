@@ -26,9 +26,15 @@
     #more (click)="moreClicked($event, 573, more)"></app-sidenav-link>
   </nav>
   <div style="margin-top: 10px;">
-    <button *ngIf="sz.on != 'md'" mat-raised-button color="primary"
-    style="border-radius: 999px; width: 227.7px; min-height: 47px;">Tweet</button>
-    <button *ngIf="sz.on == 'md'"  mat-mini-fab color="primary" style="width: 47px; height: 47px;" aria-label="Example icon button with a delete icon">
+    <button *ngIf="sz.on != 'md'"
+      (click)="openNewTweetDialog()"
+      mat-raised-button color="primary"
+      style="border-radius: 999px; width: 227.7px; min-height: 47px;">Tweet</button>
+
+      <button *ngIf="sz.on == 'md'"
+      (click)="openNewTweetDialog()"
+      mat-mini-fab color="primary"
+      style="width: 47px; height: 47px;" aria-label="Example icon button with a delete icon">
       <mat-icon svgIcon="feather"></mat-icon>
     </button>
   </div>
