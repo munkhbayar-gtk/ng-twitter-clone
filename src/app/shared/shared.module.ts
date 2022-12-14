@@ -19,6 +19,7 @@ import { SearchBoxComponent } from '../components/common/search-box/search-box.c
     TweetComposerComponent,
     TweetComponent,
     TweetComposerComponent,
+    SearchBoxComponent,
   ],
   declarations: [
     TweetActionComponent,
@@ -36,7 +37,7 @@ import { SearchBoxComponent } from '../components/common/search-box/search-box.c
     MaterialModule,
     MatIconCustomModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }

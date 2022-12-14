@@ -1,1 +1,9 @@
-<p>search-box works!</p>
+<div id="search-box-container" class="primaryColorBorderDeepFocus bg2">
+  <mat-icon id="search-icon" svgIcon="search"></mat-icon>
+  <input #input [(ngModel)]="value" placeholder="Search Twitter">
+  <div id="closer"
+    *ngIf="value.length > 0"
+    class="primaryColorBg bgColorFg">
+    <mat-icon svgIcon="closer"></mat-icon>
+  </div>
+</div>

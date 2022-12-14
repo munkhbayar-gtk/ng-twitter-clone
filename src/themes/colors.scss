@@ -64,6 +64,13 @@
   .primaryColorBorder {
     border: solid getPrimary($color);
   }
+  .primaryColorBorderDeepFocus:focus-within {
+    border: solid getPrimary($color);
+    color: getPrimary($color);
+  }
+  .bgColorFg {
+    color: map-get($themeConfig, 'bgColor') !important;
+  }
   .bgColorBoder {
     border: solid map-get($themeConfig, 'bgColor');
   }

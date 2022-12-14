@@ -42,6 +42,7 @@ import { NumFrmtComponent } from './components/common/num-frmt/num-frmt.componen
 import { AnchorDialogComponent } from './components/common/anchor-dialog/anchor-dialog.component';
 import { SharedModule } from './shared/shared.module';
 import { NewTweetDialogComponent } from './components/sidenav/new-tweet-dialog/new-tweet-dialog.component';
+//import { SearchBoxComponent } from './components/common/search-box/search-box.component';
 //import { MainModule } from './main/main.module';
 
 const globalRippleConfig = {
@@ -49,56 +50,55 @@ const globalRippleConfig = {
 }
 
 @NgModule({
-  declarations: [
-    NewTweetDialogComponent,
-    AppComponent,
-    SidenavComponent,
-    SidenavLinkComponent,
-
-    SzDirective,
-    InitDirective,
-      TrendsComponent,
-      //FeedsComponent,
-      //TweetComposerComponent,
-      //PrimaryCircleButtonComponent,
-      //PriCircleProgressComponent,
-      //TextEditableComponent,
-      //MenuItemComponent,
-      MenuItemExpandableComponent,
-      SubMenuItem,
-      //TweetComponent,
-      //TweetActionComponent,
-      MoreMenuComponentDialog,
-      DisplayHelperDialogComponent,
-      ColoredCircleCheckboxComponent,
-      ColoredCircleComponent,
-      ColoredRoundedBoxComponent,
-      ProfileComponent,
-      DoubleLinedTextComponent,
-      CircleIconButtonComponent,
-      TabComponent,
-      TabsComponent,
-      IconTextComponent,
-      NumFrmtComponent,
-      AnchorDialogComponent,
-      //NewTweetDialogComponent,
-  ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgsContenteditableModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    MatIconCustomModule,
-    SharedModule,
-    //MainModule
-  ],
-  providers: [
-    {provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        NewTweetDialogComponent,
+        AppComponent,
+        SidenavComponent,
+        SidenavLinkComponent,
+        SzDirective,
+        InitDirective,
+        TrendsComponent,
+        //FeedsComponent,
+        //TweetComposerComponent,
+        //PrimaryCircleButtonComponent,
+        //PriCircleProgressComponent,
+        //TextEditableComponent,
+        //MenuItemComponent,
+        MenuItemExpandableComponent,
+        SubMenuItem,
+        //TweetComponent,
+        //TweetActionComponent,
+        MoreMenuComponentDialog,
+        DisplayHelperDialogComponent,
+        ColoredCircleCheckboxComponent,
+        ColoredCircleComponent,
+        ColoredRoundedBoxComponent,
+        ProfileComponent,
+        DoubleLinedTextComponent,
+        CircleIconButtonComponent,
+        TabComponent,
+        TabsComponent,
+        IconTextComponent,
+        NumFrmtComponent,
+        AnchorDialogComponent,
+        //NewTweetDialogComponent,
+        //SearchBoxComponent
+    ],
+    providers: [
+        { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig }
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgsContenteditableModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        MatIconCustomModule,
+        SharedModule,
+    ]
 })
 export class AppModule { }
