@@ -1,3 +1,19 @@
-<div class="feeds-container" style="width: 350px; height: 100vh; padding: 2px 15px 0px 15px">
+<div id="feeds-container">
   <app-search-box></app-search-box>
+
+  <div class="rounded-box bg2">
+    <h1 class="mat-h2 padded-box">Trends for you</h1>
+
+    <app-trend-item
+    *ngFor="let trend of trends"
+    [titles]="trend">
+  </app-trend-item>
+
+  <a class="primaryColor padded-box" style="cursor:pointer">Show more</a>
+</div>
+
+<div class="rounded-box bg2">
+  <h1 class="mat-h2 padded-box">Who to follow</h1>
+  <a class="primaryColor padded-box" style="cursor:pointer">Show more</a>
+</div>
 </div>

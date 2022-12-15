@@ -26,4 +26,8 @@
   padding: 6px;
   display: flex;
   align-items: center;
+
+  mat-icon {
+    cursor: pointer;
+  }
 }

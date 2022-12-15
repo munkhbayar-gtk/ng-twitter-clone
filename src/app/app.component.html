@@ -16,7 +16,8 @@ style="height: 100%" class="mat-app-background">
         </header>
         <main role="main" style=" flex-grow: 1;" class="divider-border">
           <div classNames="flex" >
-            <div id="router-contianer" style="max-width: 600px; " [ngStyle]="{'width' : calc(windowWidth) + 'px'}">
+            <div id="router-contianer" class="divider-border" style="max-width: 600px; "
+               [ngStyle]="{'width' : calc(windowWidth) + 'px'}">
               <router-outlet></router-outlet>
             </div>
             <app-trends-list *ngIf="windowWidth > 987" [ngStyle]="{'width' : (windowWidth > 1078? 350 : 290)+'px'}"></app-trends-list>

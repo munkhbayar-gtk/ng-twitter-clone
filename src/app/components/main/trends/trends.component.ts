@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiTweetService } from 'src/app/services/api/api-tweet.service';
 
 @Component({
   selector: 'app-trends-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrendsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService : ApiTweetService) { }
 
   ngOnInit(): void {
   }
 
+  get trends() : string[][] {
+    return this.apiService.listOfTrends();
+  }
 }

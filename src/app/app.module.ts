@@ -42,6 +42,7 @@ import { NumFrmtComponent } from './components/common/num-frmt/num-frmt.componen
 import { AnchorDialogComponent } from './components/common/anchor-dialog/anchor-dialog.component';
 import { SharedModule } from './shared/shared.module';
 import { NewTweetDialogComponent } from './components/sidenav/new-tweet-dialog/new-tweet-dialog.component';
+import { TrendItemComponent } from './components/main/trends/trend-item/trend-item.component';
 //import { SearchBoxComponent } from './components/common/search-box/search-box.component';
 //import { MainModule } from './main/main.module';
 
@@ -81,6 +82,7 @@ const globalRippleConfig = {
         IconTextComponent,
         NumFrmtComponent,
         AnchorDialogComponent,
+        TrendItemComponent,
         //NewTweetDialogComponent,
         //SearchBoxComponent
     ],

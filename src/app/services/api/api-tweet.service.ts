@@ -16,8 +16,13 @@ export class ApiTweetService implements ApiTweetServiceEndpoint{
   list() : Observable<Tweet[]>{
     return this.endpoint.list();
   }
+
+  listOfTrends() : string[][]{
+    return this.endpoint.listOfTrends();
+  }
 }
 
 export interface ApiTweetServiceEndpoint {
+  listOfTrends(): string[][];
   list() : Observable<Tweet[]>;
 }

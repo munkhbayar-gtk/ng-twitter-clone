@@ -2,8 +2,10 @@
   <mat-icon id="search-icon" svgIcon="search"></mat-icon>
   <input #input [(ngModel)]="value" placeholder="Search Twitter">
   <div id="closer"
-    *ngIf="value.length > 0"
+    [ngStyle]="{'visibility' : value.length > 0 ? 'visible' : 'hidden'}"
     class="primaryColorBg bgColorFg">
-    <mat-icon svgIcon="closer"></mat-icon>
+    <mat-icon
+      svgIcon="closer"
+      (click)="value=''; input.focus()"></mat-icon>
   </div>
 </div>

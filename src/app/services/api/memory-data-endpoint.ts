@@ -3,6 +3,33 @@ import { Observable, Subject } from 'rxjs';
 import { Tweet } from 'src/app/data/data';
 import { ApiTweetServiceEndpoint } from './api-tweet.service';
 export class MemoryTweetDataEndpoint implements ApiTweetServiceEndpoint {
+  listOfTrends(): string[][] {
+    return [
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Trending', '#Google', '9,237 Tweets'],
+      ['Trending', '#QElon', '3,177 Tweets'],
+      ['Technology · Trending', '#TypeScript', '15,177 Tweets'],
+      ['Technology · Trending', '#JavaScript', '50k Tweets'],
+      ['Technology · Trending', '#CSS', '4,577 Tweets'],
+      ['Business & Finance · Trending', '#FTXHeading', '260k Tweets'],
+      ['Business & Finance · Trending', '#Binance', '500k Tweets'],
+      ['Business & Finance · Trending', '#BTC', '900k Tweets'],
+      ['Trending', '#Trump tower', '6,677 Tweets'],
+      ['Sports · Trending', '#Lakers', '100k Tweets'],
+      ['Sports · Trending', 'Lebron James', '150k Tweets'],
+      /*
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      ['Technology · Trending', '#Java', '4,177 Tweets'],
+      */
+    ];
+  }
   private tweetId = 0;
   private listSubject = new Subject<Tweet[]>();
   private listSubjectObservable = this.listSubject.asObservable();

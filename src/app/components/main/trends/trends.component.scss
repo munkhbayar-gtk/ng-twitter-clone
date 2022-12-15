@@ -1,0 +1,18 @@
+
+.rounded-box {
+  border-radius: 20px;
+  padding: 10px 0px 10px 0px;
+}
+
+.padded-box {
+  padding: 0 15px 0 15px;;
+}
+
+#feeds-container {
+  width: 350px;
+  height: 100vh;
+  padding: 2px 15px 0px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
